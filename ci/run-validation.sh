@@ -31,14 +31,18 @@ luacheck "${targets[@]}" --formatter plain --codes 2>/dev/null \
 echo "::endgroup::" 2>/dev/null || true
 
 echo "::group::lua-language-server (signatures)" 2>/dev/null || echo "== lua-language-server (signatures) =="
-LOGDIR="$OUT/luals-log"; META="$OUT/luals-meta"; mkdir -p "$LOGDIR" "$META"; CHECK="$LOGDIR/check.json"; rm -f "$CHECK"
-# --metapath must be writable: LuaLS generates the runtime's builtin-type meta there. It defaults
-# next to the executable, which is read-only in some sandboxes (e.g. a Lambda container's /opt),
-# and without it every `---@param x string` becomes an "undefined-doc-name" false positive.
+LOGDIR="$OUT/luals-log"; mkdir -p "$LOGDIR"; CHECK="$LOGDIR/check.json"; rm -f "$CHECK"
+# --metapath: LuaLS generates the runtime's builtin-type meta here. Two requirements:
+#  1) writable — it defaults next to the executable, which is read-only in some sandboxes (e.g. a
+#     Lambda container's /opt); without it every `---@param x string` is an undefined-doc-name.
+#  2) OUTSIDE the checked workspace — those generated .lua meta files must not be picked up by
+#     `--check .`, or LuaLS reports duplicate-doc-field/deprecated false positives against itself.
+META="$(mktemp -d "${TMPDIR:-/tmp}/wow-api-luals-meta.XXXXXX")"
 args=(--check . --checklevel="$CHECK_LEVEL" --check_format=json
       --check_out_path="$CHECK" --logpath="$LOGDIR" --metapath="$META")
 [ -f .luarc.json ] && args+=(--configpath="$ADDON_DIR/.luarc.json")
 lua-language-server "${args[@]}" >/dev/null 2>&1 || true
+rm -rf "$META"
 python3 "$CI_DIR/luals_to_rdjson.py" "$CHECK" "$ADDON_DIR" > "$OUT/luals.rdjson"
 echo "::endgroup::" 2>/dev/null || true
 
