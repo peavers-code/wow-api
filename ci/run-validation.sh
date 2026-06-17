@@ -31,9 +31,12 @@ luacheck "${targets[@]}" --formatter plain --codes 2>/dev/null \
 echo "::endgroup::" 2>/dev/null || true
 
 echo "::group::lua-language-server (signatures)" 2>/dev/null || echo "== lua-language-server (signatures) =="
-LOGDIR="$OUT/luals-log"; mkdir -p "$LOGDIR"; CHECK="$LOGDIR/check.json"; rm -f "$CHECK"
+LOGDIR="$OUT/luals-log"; META="$OUT/luals-meta"; mkdir -p "$LOGDIR" "$META"; CHECK="$LOGDIR/check.json"; rm -f "$CHECK"
+# --metapath must be writable: LuaLS generates the runtime's builtin-type meta there. It defaults
+# next to the executable, which is read-only in some sandboxes (e.g. a Lambda container's /opt),
+# and without it every `---@param x string` becomes an "undefined-doc-name" false positive.
 args=(--check . --checklevel="$CHECK_LEVEL" --check_format=json
-      --check_out_path="$CHECK" --logpath="$LOGDIR")
+      --check_out_path="$CHECK" --logpath="$LOGDIR" --metapath="$META")
 [ -f .luarc.json ] && args+=(--configpath="$ADDON_DIR/.luarc.json")
 lua-language-server "${args[@]}" >/dev/null 2>&1 || true
 python3 "$CI_DIR/luals_to_rdjson.py" "$CHECK" "$ADDON_DIR" > "$OUT/luals.rdjson"
