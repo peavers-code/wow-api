@@ -215,6 +215,8 @@ return {
     "211/addonName",  -- `local addonName, ns = ...` header idiom
     "131/SLASH_.*",   -- SLASH_<CMD><N> globals are read by the WoW engine, not Lua, so
                       -- 131 (unused global) is always a false positive on them
+    "111/SLASH_.*",   -- ...and when SLASH_* are assigned inside a callback (not at top
+                      -- level) allow_defined_top doesn't cover them, so 111 fires instead
     "611", "612",     -- whitespace-only / trailing-whitespace lines (style, not bugs)
     "613", "614",     -- trailing whitespace in string/comment
     -- KEEP ON: 11x (undefined/setting globals — WoW API typos), 211/231 (unused),
