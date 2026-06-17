@@ -43,17 +43,30 @@ lc=$(python3 -c "import json;print(len(json.load(open('$OUT/luacheck.rdjson'))['
 ls_=$(python3 -c "import json;print(len(json.load(open('$OUT/luals.rdjson'))['diagnostics']))")
 echo "luacheck: $lc finding(s) | lua-language-server: $ls_ finding(s)"
 
-# Local dry run: no reporter set, or reviewdog missing -> just report, never fail the shell.
-if [ -z "${REVIEWDOG_REPORTER:-}" ] || ! command -v reviewdog >/dev/null 2>&1; then
-  [ -z "${REVIEWDOG_REPORTER:-}" ] && echo "(dry run: set REVIEWDOG_REPORTER to post inline comments)"
-  command -v reviewdog >/dev/null 2>&1 || echo "(reviewdog not on PATH; rdjson written to $OUT/)"
-  exit 0
-fi
+# REPORT_MODE selects how findings surface:
+#   pr    -> reviewdog inline review comments (pull_request events)
+#   issue -> upsert one tracking issue per repo (push/master + workflow_dispatch)
+#   dry   -> local run: just write rdjson + summary, never post or fail (default)
+MODE="${REPORT_MODE:-dry}"
 
-# Post inline PR comments. Errors fail the check (FAIL_LEVEL=error); warnings annotate only.
-rc=0
-reviewdog -f=rdjson -name=luacheck -reporter="$REVIEWDOG_REPORTER" \
-  -fail-level="$FAIL_LEVEL" < "$OUT/luacheck.rdjson" || rc=$?
-reviewdog -f=rdjson -name=lua-language-server -reporter="$REVIEWDOG_REPORTER" \
-  -fail-level="$FAIL_LEVEL" < "$OUT/luals.rdjson" || rc=$?
-exit $rc
+case "$MODE" in
+  pr)
+    command -v reviewdog >/dev/null 2>&1 || { echo "reviewdog not on PATH"; exit 0; }
+    # Inline PR comments on the diff. Errors fail (FAIL_LEVEL); warnings annotate only.
+    rc=0
+    reviewdog -f=rdjson -name=luacheck -reporter=github-pr-review -filter-mode=added \
+      -fail-level="$FAIL_LEVEL" < "$OUT/luacheck.rdjson" || rc=$?
+    reviewdog -f=rdjson -name=lua-language-server -reporter=github-pr-review -filter-mode=added \
+      -fail-level="$FAIL_LEVEL" < "$OUT/luals.rdjson" || rc=$?
+    exit $rc
+    ;;
+  issue)
+    # Upsert the per-repo tracking issue (auto-closes when clean). Never fails the build.
+    python3 "$CI_DIR/report_issue.py" "$OUT/luacheck.rdjson" "$OUT/luals.rdjson"
+    exit 0
+    ;;
+  *)
+    echo "(dry run: set REPORT_MODE=pr|issue to post; rdjson written to $OUT/)"
+    exit 0
+    ;;
+esac

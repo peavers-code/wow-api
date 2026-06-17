@@ -4,8 +4,9 @@
 # Each addon calls it from its own .github/workflows/validate.yml (see validate.caller.yml).
 #
 # Runs the two-tier static analysis (luacheck existence + lua-language-server signatures)
-# against the shared wow-api defs and posts findings as inline PR comments via reviewdog.
-# Errors fail the check; warnings annotate only (fail_level: error).
+# against the shared wow-api defs. On pull_request it posts inline review comments via
+# reviewdog (errors fail the check, warnings annotate). On push to master / workflow_dispatch
+# it upserts one tracking issue per repo with the current findings (auto-closed when clean).
 name: Validate
 
 on:
@@ -26,7 +27,8 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write   # reviewdog posts inline review comments
+  pull-requests: write   # reviewdog posts inline review comments (PR events)
+  issues: write          # upsert the tracking issue (push/master + workflow_dispatch)
 
 jobs:
   validate:
@@ -66,8 +68,12 @@ jobs:
       - name: Validate
         working-directory: addon
         env:
+          # pull_request -> inline reviewdog comments; otherwise -> upsert tracking issue.
+          REPORT_MODE: ${{ github.event_name == 'pull_request' && 'pr' || 'issue' }}
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REVIEWDOG_REPORTER: github-pr-review
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           WOW_API_DIR: ${{ github.workspace }}/wow-api
           CHECK_LEVEL: ${{ inputs.check_level }}
           FAIL_LEVEL: ${{ inputs.fail_level }}
