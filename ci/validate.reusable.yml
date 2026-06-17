@@ -53,8 +53,12 @@ jobs:
           sudo luarocks install luacheck
 
       - name: Install lua-language-server
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          VER=$(curl -fsSL https://api.github.com/repos/LuaLS/lua-language-server/releases/latest | grep -oP '"tag_name":\s*"\K[^"]+')
+          # Authenticated API (gh) avoids the 60/hr anonymous rate limit that 403s when
+          # many addon runs resolve the latest release at once.
+          VER=$(gh api repos/LuaLS/lua-language-server/releases/latest --jq '.tag_name')
           curl -fsSL -o luals.tar.gz \
             "https://github.com/LuaLS/lua-language-server/releases/download/${VER}/lua-language-server-${VER}-linux-x64.tar.gz"
           mkdir -p "$HOME/.luals" && tar -xzf luals.tar.gz -C "$HOME/.luals"
