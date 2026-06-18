@@ -4,9 +4,13 @@
 #
 #   Env:
 #     WOW_API_DIR        path to the wow-api package        (default: ../wow-api)
+#     WOW_FLAVOR         flavor whose defs to use           (default: mainline; read by .luacheckrc)
+#     WOW_BUILD          interface build under that flavor  (unset = curated fallback)
 #     REVIEWDOG_REPORTER reviewdog -reporter value          (unset = local dry run, no post)
 #     CHECK_LEVEL        LuaLS level: Error|Warning|Hint    (default: Warning)
 #     FAIL_LEVEL         reviewdog -fail-level: error|any   (default: error)
+#   WOW_FLAVOR/WOW_BUILD are consumed by the addon's .luacheckrc (via luacheckrc.base.lua);
+#   the caller (AddonSentry) exports them per run to select build/<flavor>/<build>/.
 #
 #   Run from an addon directory:
 #     ../wow-api/ci/run-validation.sh

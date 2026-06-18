@@ -1,0 +1,8 @@
+## Interface: 30403
+## Title: Peavers API Dump (dev)
+## Notes: Dev-only. /papidump captures the client Lua API to SavedVariables for static analysis.
+## Author: Peavers
+## Version: 1.0
+## SavedVariables: PeaversAPIDumpDB
+
+Dump.lua

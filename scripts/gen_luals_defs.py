@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the Lua Language Server definition files from an in-game /papidump.
 
-Writes (under build/<BUILD>/luals/):
+Writes (under build/<FLAVOR>/<BUILD>/luals/):
     wow-api.lua      signatures (@param/@return) for documented APIs
     wow-globals.lua  `any` stubs for EVERY global, so the thousands of FrameXML globals
                      not in APIDocumentation (CreateFrame, font objects, GetAchievementInfo,
@@ -12,7 +12,7 @@ These sit UNDER the Ketho community annotations in workspace.library: Ketho prov
 signatures for the broad API, this overlay adds build-exact existence + private globals.
 
 Usage:
-    python3 scripts/gen_luals_defs.py [--sv PATH] [--wow-root DIR]
+    python3 scripts/gen_luals_defs.py [--sv PATH] [--wow-root DIR] [--flavor era]
 """
 import argparse
 import os
@@ -21,7 +21,10 @@ import sys
 
 # Reuse the dump-locating + extraction helpers from the sibling generator.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gen_wow_api import find_sv, extract, SELF_PREFIXES, WOW_ROOTS, REPO_ROOT  # noqa: E402
+import flavor  # noqa: E402
+from gen_wow_api import (  # noqa: E402
+    find_sv, extract, build_tag_of, resolve_flavor, SELF_PREFIXES, WOW_ROOTS, REPO_ROOT,
+)
 
 
 def unescape(v):
@@ -36,7 +39,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--sv", help="explicit path to PeaversAPIDump.lua")
-    ap.add_argument("--wow-root", help="WoW _retail_ directory to search")
+    ap.add_argument("--wow-root", help="WoW install sub-root directory to search")
+    ap.add_argument("--flavor", choices=flavor.canonical_flavors(),
+                    help="force the flavor (default: derive from the dump's projectId/build)")
     args = ap.parse_args()
 
     sv = find_sv(args.sv, args.wow_root)
@@ -47,10 +52,9 @@ def main():
     with open(sv, encoding="utf-8", errors="replace") as fh:
         text = fh.read()
 
-    build = extract(text, "build") or "unknown"
-    bm = re.search(r"interface\s+(\d+)", build)
-    build_tag = bm.group(1) if bm else "unknown"
-    out_dir = os.path.join(REPO_ROOT, "build", build_tag, "luals")
+    build, build_tag = build_tag_of(text)
+    flavor_id = resolve_flavor(text, args.flavor)
+    out_dir = os.path.join(REPO_ROOT, "build", flavor_id, build_tag, "luals")
     os.makedirs(out_dir, exist_ok=True)
 
     # --- 1. Signatures -----------------------------------------------------

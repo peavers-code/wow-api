@@ -7,7 +7,9 @@ read as undefined under LuaLS until a real /papidump is generated. This emits
     config/curated-globals.lua
 declaring every curated read_globals name as `any`, so LuaLS knows they exist pre-dump.
 It mirrors the SAME curated list in config/luacheckrc.base.lua (one source of truth) — when
-build/<BUILD>/luals/wow-globals.lua (from /papidump) is present it simply augments this.
+build/<FLAVOR>/<BUILD>/luals/wow-globals.lua (from /papidump) is present it simply augments
+this. This curated floor is flavor-agnostic (overwhelmingly shared API); add a per-flavor
+delta file only if a flavor genuinely needs different curated names.
 
 Run after editing the curated list:
     python3 scripts/gen_curated_luals.py

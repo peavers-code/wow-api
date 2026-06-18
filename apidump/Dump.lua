@@ -12,6 +12,11 @@
     4. Back in the repo: python3 wow-api/scripts/gen_wow_api.py   (luacheck globals)
                          python3 wow-api/scripts/gen_luals_defs.py (LuaLS signatures)
 
+  Multi-flavor: each WoW edition (retail, Classic Era, MoP Classic, ...) ships its own
+  API surface, so run the above once PER CLIENT. The sibling TOCs (PeaversAPIDump_Vanilla,
+  _Mists, _Cata, _Wrath) let this addon load on each client; the dump records WOW_PROJECT_ID
+  so the generators sort the output under build/<FLAVOR>/<BUILD>/ automatically.
+
   Two products land in SavedVariables (PeaversAPIDumpDB):
     .globals  — newline-joined identifiers: top-level globals plus one level of fields
                 for C_*/Enum/*Util/*Mixin/SOUNDKIT namespaces. Feeds luacheck (existence).
@@ -146,10 +151,16 @@ SlashCmdList["PAPIDUMP"] = function()
     .. (type(APIDocumentation) == "table" and "present" or "MISSING")
     .. ", systems = " .. sysCount)
   local major, _, _, interface = GetBuildInfo()
+  -- WOW_PROJECT_ID is the authoritative flavor signal (mainline/era/mists/...). The
+  -- generators map this numeric id to a flavor via config/flavors.json, so capture it
+  -- raw rather than mapping in-Lua (keeps one mapping table). May be nil on very old
+  -- clients; fall back to the interface-number range there.
+  local projectId = WOW_PROJECT_ID
   local globals = collectGlobals()
   local emmy = collectEmmy()
   PeaversAPIDumpDB = {
     build = tostring(major) .. " interface " .. tostring(interface),
+    projectId = tostring(projectId),
     globalCount = select(2, globals:gsub("\n", "\n")) + 1,
     globals = globals,
     emmylua = emmy,
@@ -157,6 +168,6 @@ SlashCmdList["PAPIDUMP"] = function()
   print("|cff00ff00PAPIDump|r captured "
     .. PeaversAPIDumpDB.globalCount .. " globals + "
     .. select(2, emmy:gsub("\nfunction ", "")) .. " documented functions for build "
-    .. PeaversAPIDumpDB.build .. ".")
+    .. PeaversAPIDumpDB.build .. " (WOW_PROJECT_ID " .. PeaversAPIDumpDB.projectId .. ").")
   print("Now type |cffffff00/reload|r to flush it to SavedVariables, then run the generators.")
 end

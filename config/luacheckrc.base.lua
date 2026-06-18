@@ -15,15 +15,20 @@
 --   globals        = { "MyAddon", "MyAddonDB", "SLASH_MYADDON1", "SlashCmdList" }
 --
 -- The WoW API (stds.wow) has two sources, in priority order:
---   1. <apiDir>/build/<BUILD>/wow-globals.lua — version-accurate, generated from an
---      in-game /papidump (see scripts/gen_wow_api.py). Used automatically when present.
+--   1. <apiDir>/build/<WOW_FLAVOR>/<WOW_BUILD>/wow-globals.lua — version-accurate, generated
+--      from an in-game /papidump (see scripts/gen_wow_api.py). Used when the caller sets the
+--      WOW_FLAVOR + WOW_BUILD env vars (AddonSentry does, per the addon's TOC flavor).
 --   2. The curated fallback below — hand-maintained; covers the common surface so linting
---      works before anyone runs a dump. Extend as addons reach for new calls.
+--      works before anyone runs a dump (and whenever WOW_BUILD is unset). Extend as needed.
 
 local apiDir = ... or "../wow-api"
 
--- The interface build whose generated defs we prefer. Bump on patch (see README).
-local BUILD = "120007"
+-- Which flavor + interface build's generated defs to prefer, injected by the caller via
+-- the environment (AddonSentry sets both per run, per the addon's TOC flavor). FLAVOR
+-- defaults to mainline; if BUILD is unset (e.g. local dev with no dump for this flavor),
+-- loadWowStd falls back to the curated floor below — exactly as before any dump exists.
+local FLAVOR = os.getenv("WOW_FLAVOR") or "mainline"
+local BUILD = os.getenv("WOW_BUILD")
 
 -- ---------------------------------------------------------------------------
 -- Curated fallback WoW std (used when no generated wow-globals.lua is present).
@@ -160,7 +165,8 @@ end
 -- Prefer the generated, version-accurate std (merged with the curated floor); else curated.
 -- Guarded so a missing file / sandboxed loadfile silently keeps the fallback working.
 local function loadWowStd()
-  local path = apiDir .. "/build/" .. BUILD .. "/wow-globals.lua"
+  if not BUILD then return curated end
+  local path = apiDir .. "/build/" .. FLAVOR .. "/" .. BUILD .. "/wow-globals.lua"
   local f = loadfile and loadfile(path)
   if f then
     local ok, res = pcall(f)
