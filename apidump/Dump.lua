@@ -142,8 +142,11 @@ local function ensureDocs()
   loadAddon("Blizzard_APIDocumentationGenerated")
 end
 
-SLASH_PAPIDUMP1 = "/papidump"
-SlashCmdList["PAPIDUMP"] = function()
+-- The dump itself, exposed as a global so both the /papidump slash command and the
+-- unattended apidump-auto companion addon (PLAYER_ENTERING_WORLD -> Run -> Quit) share one
+-- implementation. Writes PeaversAPIDumpDB; the caller is responsible for flushing it to disk
+-- (manual: /reload; auto: Quit() on exit).
+function PeaversAPIDump_Run()
   ensureDocs()
   local sysCount = (type(APIDocumentation) == "table" and type(APIDocumentation.systems) == "table")
     and #APIDocumentation.systems or 0
@@ -169,5 +172,11 @@ SlashCmdList["PAPIDUMP"] = function()
     .. PeaversAPIDumpDB.globalCount .. " globals + "
     .. select(2, emmy:gsub("\nfunction ", "")) .. " documented functions for build "
     .. PeaversAPIDumpDB.build .. " (WOW_PROJECT_ID " .. PeaversAPIDumpDB.projectId .. ").")
+  return PeaversAPIDumpDB
+end
+
+SLASH_PAPIDUMP1 = "/papidump"
+SlashCmdList["PAPIDUMP"] = function()
+  PeaversAPIDump_Run()
   print("Now type |cffffff00/reload|r to flush it to SavedVariables, then run the generators.")
 end

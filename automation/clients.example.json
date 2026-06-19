@@ -1,0 +1,25 @@
+{
+  "//": "Copy to clients.json (gitignored) and edit for this machine. One entry per INSTALLED client root, not per flavor: PTR/Beta are just extra entries (their in-game projectId routes the dump to the right flavor). 'flavor' is an optional override; normally omit it and let the dump's projectId decide. 'navigate' tunes navigate.ahk's waits for this client.",
+  "ahk_exe": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey.exe",
+  "default_timeout": 300,
+  "clients": [
+    {
+      "name": "Retail",
+      "exe": "C:\\Program Files (x86)\\World of Warcraft\\_retail_\\Wow.exe",
+      "wow_root": "C:\\Program Files (x86)\\World of Warcraft\\_retail_",
+      "navigate": {"login_wait": 30, "char_wait": 20, "enters": 2}
+    },
+    {
+      "name": "Classic Era",
+      "exe": "C:\\Program Files (x86)\\World of Warcraft\\_classic_era_\\WowClassic.exe",
+      "wow_root": "C:\\Program Files (x86)\\World of Warcraft\\_classic_era_",
+      "navigate": {"login_wait": 30, "char_wait": 20, "enters": 2}
+    },
+    {
+      "name": "Classic Progression (Mists)",
+      "exe": "C:\\Program Files (x86)\\World of Warcraft\\_classic_\\WowClassic.exe",
+      "wow_root": "C:\\Program Files (x86)\\World of Warcraft\\_classic_",
+      "navigate": {"login_wait": 30, "char_wait": 20, "enters": 2}
+    }
+  ]
+}

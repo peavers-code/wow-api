@@ -1,0 +1,3 @@
+# Machine-specific client config (paths, per-machine timings) and run logs.
+clients.json
+logs/

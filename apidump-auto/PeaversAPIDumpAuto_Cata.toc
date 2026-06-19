@@ -1,0 +1,9 @@
+## Interface: 40402
+## Title: Peavers API Dump — Auto (dev)
+## Notes: Dev-only. Auto-dumps on login then quits (dump server). Enable with PeaversAPIDump.
+## Author: Peavers
+## Version: 1.0
+## Dependencies: PeaversAPIDump
+## SavedVariables: PeaversAPIDumpDB
+
+Auto.lua
