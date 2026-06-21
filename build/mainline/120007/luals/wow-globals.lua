@@ -15072,6 +15072,12 @@ ChatConfigTextToSpeechChannelSettingsLeftCheckbox4Check = nil
 ---@type any
 ChatConfigTextToSpeechChannelSettingsLeftCheckbox4CheckText = nil
 ---@type any
+ChatConfigTextToSpeechChannelSettingsLeftCheckbox5 = nil
+---@type any
+ChatConfigTextToSpeechChannelSettingsLeftCheckbox5Check = nil
+---@type any
+ChatConfigTextToSpeechChannelSettingsLeftCheckbox5CheckText = nil
+---@type any
 ChatConfigTextToSpeechChannelSettingsLeftTitle = nil
 ---@type any
 ChatConfigTextToSpeechChannelSettings_OnShow = nil
@@ -33756,9 +33762,25 @@ GameTooltipTextLeft1 = nil
 ---@type any
 GameTooltipTextLeft2 = nil
 ---@type any
+GameTooltipTextLeft3 = nil
+---@type any
+GameTooltipTextLeft4 = nil
+---@type any
+GameTooltipTextLeft5 = nil
+---@type any
+GameTooltipTextLeft6 = nil
+---@type any
 GameTooltipTextRight1 = nil
 ---@type any
 GameTooltipTextRight2 = nil
+---@type any
+GameTooltipTextRight3 = nil
+---@type any
+GameTooltipTextRight4 = nil
+---@type any
+GameTooltipTextRight5 = nil
+---@type any
+GameTooltipTextRight6 = nil
 ---@type any
 GameTooltipTextSmall = nil
 ---@type any
@@ -61816,16 +61838,6 @@ PlayerFrameEvokerEbonMightBarMixin = nil
 ---@type any
 PlayerFrameGroupIndicatorText = nil
 ---@type any
-PlayerFrameRune1 = nil
----@type any
-PlayerFrameRune2 = nil
----@type any
-PlayerFrameRune3 = nil
----@type any
-PlayerFrameRune4 = nil
----@type any
-PlayerFrameRune5 = nil
----@type any
 PlayerFrame_AdjustAttachments = nil
 ---@type any
 PlayerFrame_AttachCastBar = nil
@@ -79498,6 +79510,8 @@ TopBannerQueue = nil
 ---@type any
 TopLevelParentScaleFrameMixin = nil
 ---@type any
+TopText = nil
+---@type any
 TorghastGemsAnimationMixin = nil
 ---@type any
 TotemButtonMixin = nil
@@ -84989,6 +85003,10 @@ VehiclePinMixin = nil
 VehiclePrevSeat = nil
 ---@type any
 VehicleSeatIndicator = nil
+---@type any
+VehicleSeatIndicatorButton1 = nil
+---@type any
+VehicleSeatIndicatorButton2 = nil
 ---@type any
 VehicleSeatIndicatorButtonMixin = nil
 ---@type any

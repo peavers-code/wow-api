@@ -3,3 +3,4 @@
 .luals-log/
 
 # Committed (do NOT ignore): build/<BUILD>/ generated defs, vendor/ketho, config/.
+__pycache__/
