@@ -1,11 +1,11 @@
 {
-  "_comment": "Canonical WoW flavor (game edition) table. Single source of truth shared by the Python generators (scripts/flavor.py) and AddonSentry, which ships this file via COPY wow-api /opt/wow-api. project_id = the in-game WOW_PROJECT_ID; aliases_toc = TOC filename suffixes the client recognizes (bare/no-suffix => mainline); interface_min/max = the interface-number range that maps to this flavor; wow_root = the install-dir name used to locate SavedVariables. NOTE: mists project_id is provisional - confirm against the raw WOW_PROJECT_ID the dumper records and correct here.",
+  "_comment": "Canonical WoW flavor (game edition) table. Single source of truth shared by the Python generators (scripts/flavor.py) and AddonSentry, which ships this file via COPY wow-api /opt/wow-api. label = the human-facing edition name AddonSentry surfaces (manifest catalog, marketing site); project_id = the in-game WOW_PROJECT_ID; aliases_toc = TOC filename suffixes the client recognizes (bare/no-suffix => mainline); interface_min/max = the interface-number range that maps to this flavor; wow_root = the install-dir name used to locate SavedVariables. NOTE: mists project_id is provisional - confirm against the raw WOW_PROJECT_ID the dumper records and correct here.",
   "flavors": [
-    {"id": "mainline", "aliases_toc": ["Mainline", ""],      "project_id": 1,  "interface_min": 100000, "interface_max": 999999, "wow_root": "_retail_"},
-    {"id": "era",      "aliases_toc": ["Vanilla", "Classic"], "project_id": 2,  "interface_min": 11300,  "interface_max": 11599,  "wow_root": "_classic_era_"},
-    {"id": "mists",    "aliases_toc": ["Mists"],              "project_id": 19, "interface_min": 50500,  "interface_max": 50599,  "wow_root": "_classic_"},
-    {"id": "cata",     "aliases_toc": ["Cata"],               "project_id": 14, "interface_min": 40400,  "interface_max": 40499,  "wow_root": "_classic_"},
-    {"id": "wrath",    "aliases_toc": ["Wrath", "WOTLKC"],     "project_id": 11, "interface_min": 30400,  "interface_max": 30499,  "wow_root": "_classic_"},
-    {"id": "tbc",      "aliases_toc": ["TBC", "BCC"],          "project_id": 5,  "interface_min": 20500,  "interface_max": 20599,  "wow_root": "_classic_"}
+    {"id": "mainline", "label": "Retail",                  "aliases_toc": ["Mainline", ""],      "project_id": 1,  "interface_min": 100000, "interface_max": 999999, "wow_root": "_retail_"},
+    {"id": "era",      "label": "Classic Era",             "aliases_toc": ["Vanilla", "Classic"], "project_id": 2,  "interface_min": 11300,  "interface_max": 11599,  "wow_root": "_classic_era_"},
+    {"id": "mists",    "label": "MoP Classic",             "aliases_toc": ["Mists"],              "project_id": 19, "interface_min": 50500,  "interface_max": 50599,  "wow_root": "_classic_"},
+    {"id": "cata",     "label": "Cataclysm Classic",       "aliases_toc": ["Cata"],               "project_id": 14, "interface_min": 40400,  "interface_max": 40499,  "wow_root": "_classic_"},
+    {"id": "wrath",    "label": "Wrath Classic",           "aliases_toc": ["Wrath", "WOTLKC"],     "project_id": 11, "interface_min": 30400,  "interface_max": 30499,  "wow_root": "_classic_"},
+    {"id": "tbc",      "label": "Burning Crusade Classic", "aliases_toc": ["TBC", "BCC"],          "project_id": 5,  "interface_min": 20500,  "interface_max": 20599,  "wow_root": "_classic_"}
   ]
 }
