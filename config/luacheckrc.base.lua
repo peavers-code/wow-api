@@ -50,7 +50,7 @@ local curated = {
     bit    = { fields = { "band", "bor", "bxor", "bnot", "lshift", "rshift", "arshift", "tobit", "tohex" } },
 
     -- Time / numbers / enums
-    "GetTime", "GetTimePreciseSec", "debugprofilestop", "BreakUpLargeNumbers",
+    "GetTime", "GetTimePreciseSec", "debugprofilestop", "GetFramerate", "BreakUpLargeNumbers",
     "Enum", "C_Texture",
 
     -- Core frame / UI
@@ -86,6 +86,8 @@ local curated = {
     "IsInRaid", "IsInGroup", "IsInInstance", "GetNumGroupMembers", "GetNumSubgroupMembers",
     "GetRealmName", "GetNormalizedRealmName", "UnitGroupRolesAssigned",
     "GetSpecialization", "GetSpecializationInfo", "GetSpecializationInfoByID",
+    "C_SpecializationInfo", "GetNumSpecializationsForClassID",
+    "GetSpecializationInfoForClassID", "GetNumClasses",
     "GetLocale", "GetCVar", "SetCVar", "GetCVarBool",
 
     -- Stats
@@ -100,12 +102,13 @@ local curated = {
     -- Items / inventory / container
     "GetItemInfo", "GetItemInfoInstant", "GetItemIcon", "GetItemCount",
     "GetInventoryItemLink", "GetInventoryItemDurability", "GetInventoryItemTexture",
-    "GetInventorySlotInfo", "C_Item", "C_Container", "C_TooltipInfo", "C_CurrencyInfo",
+    "GetInventorySlotInfo", "C_Item", "Item", "C_Container", "C_TooltipInfo", "C_CurrencyInfo",
     "GetMoney", "GetCoinTextureString", "GetItemStats", "GetAverageItemLevel",
     "GetWeaponEnchantInfo", "ITEM_QUALITY_COLORS", "TooltipUtil", "C_TradeSkillUI",
     "GetDetailedItemLevelInfo", "C_AttributeUtility", "C_Attributes", "C_Stats",
     "BACKPACK_CONTAINER", "NUM_BAG_SLOTS", "NUM_TOTAL_EQUIPPED_BAG_SLOTS",
     "INVSLOT_FIRST_EQUIPPED", "INVSLOT_LAST_EQUIPPED",
+    "INVSLOT_MAINHAND", "INVSLOT_OFFHAND",
 
     -- Auras / spells
     "AuraUtil", "C_UnitAuras", "C_Spell", "GetSpellInfo", "C_SpellBook", "C_ClassTalents",
@@ -128,7 +131,8 @@ local curated = {
 
     -- Comm / addon
     "C_ChatInfo", "C_AddOns", "C_CVar", "GetAddOnMetadata", "RegisterAddonMessagePrefix",
-    "SendAddonMessage", "Ambiguate",
+    "SendAddonMessage", "Ambiguate", "ChatFrame_AddMessageEventFilter",
+    "ERR_CHAT_PLAYER_NOT_FOUND_S",
 
     -- Misc globals occasionally referenced
     "_G", "date", "GetBuildInfo", "GetServerTime",
@@ -195,6 +199,7 @@ do
   for _, name in ipairs({
     "LibStub", "PeaversCommons", "PeaversCommonsDB",
     "PeaversTalentsData", "PeaversCurrencyData", "PeaversBestInSlotData",
+    "PeaversConsumablesData",
   }) do rg[#rg + 1] = name end
 end
 

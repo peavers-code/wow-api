@@ -67,6 +67,8 @@ GetTimePreciseSec = nil
 ---@type any
 debugprofilestop = nil
 ---@type any
+GetFramerate = nil
+---@type any
 BreakUpLargeNumbers = nil
 ---@type any
 Enum = nil
@@ -241,6 +243,14 @@ GetSpecializationInfo = nil
 ---@type any
 GetSpecializationInfoByID = nil
 ---@type any
+C_SpecializationInfo = nil
+---@type any
+GetNumSpecializationsForClassID = nil
+---@type any
+GetSpecializationInfoForClassID = nil
+---@type any
+GetNumClasses = nil
+---@type any
 GetLocale = nil
 ---@type any
 GetCVar = nil
@@ -307,6 +317,8 @@ GetInventorySlotInfo = nil
 ---@type any
 C_Item = nil
 ---@type any
+Item = nil
+---@type any
 C_Container = nil
 ---@type any
 C_TooltipInfo = nil
@@ -346,6 +358,10 @@ NUM_TOTAL_EQUIPPED_BAG_SLOTS = nil
 INVSLOT_FIRST_EQUIPPED = nil
 ---@type any
 INVSLOT_LAST_EQUIPPED = nil
+---@type any
+INVSLOT_MAINHAND = nil
+---@type any
+INVSLOT_OFFHAND = nil
 ---@type any
 AuraUtil = nil
 ---@type any
@@ -424,6 +440,10 @@ RegisterAddonMessagePrefix = nil
 SendAddonMessage = nil
 ---@type any
 Ambiguate = nil
+---@type any
+ChatFrame_AddMessageEventFilter = nil
+---@type any
+ERR_CHAT_PLAYER_NOT_FOUND_S = nil
 ---@type any
 GetBuildInfo = nil
 ---@type any
