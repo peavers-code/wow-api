@@ -7086,6 +7086,94 @@ BenchmarkUtil = nil
 ---@type any
 BetterDate = nil
 ---@type any
+BetterTogether = nil
+---@type any
+BetterTogetherCharDB = nil
+---@type any
+BetterTogetherDB = nil
+---@type any
+BetterTogetherEventFrame = nil
+---@type any
+BetterTogetherMainTab1 = nil
+---@type any
+BetterTogetherMainTab2 = nil
+---@type any
+BetterTogetherPanel = nil
+---@type any
+BetterTogetherPanelBg = nil
+---@type any
+BetterTogetherPanelBotLeftCorner = nil
+---@type any
+BetterTogetherPanelBotRightCorner = nil
+---@type any
+BetterTogetherPanelBottomBorder = nil
+---@type any
+BetterTogetherPanelBtnCornerLeft = nil
+---@type any
+BetterTogetherPanelBtnCornerRight = nil
+---@type any
+BetterTogetherPanelButtonBottomBorder = nil
+---@type any
+BetterTogetherPanelCloseButton = nil
+---@type any
+BetterTogetherPanelInset = nil
+---@type any
+BetterTogetherPanelInsetBg = nil
+---@type any
+BetterTogetherPanelInsetScrollBar = nil
+---@type any
+BetterTogetherPanelInsetScrollBarScrollDownButton = nil
+---@type any
+BetterTogetherPanelInsetScrollBarScrollUpButton = nil
+---@type any
+BetterTogetherPanelInsetScrollBarThumbTexture = nil
+---@type any
+BetterTogetherPanelLeftBorder = nil
+---@type any
+BetterTogetherPanelPortrait = nil
+---@type any
+BetterTogetherPanelPortraitFrame = nil
+---@type any
+BetterTogetherPanelRightBorder = nil
+---@type any
+BetterTogetherPanelText = nil
+---@type any
+BetterTogetherPanelTitleBg = nil
+---@type any
+BetterTogetherPanelTitleText = nil
+---@type any
+BetterTogetherPanelTopBorder = nil
+---@type any
+BetterTogetherPanelTopLeftCorner = nil
+---@type any
+BetterTogetherPanelTopRightCorner = nil
+---@type any
+BetterTogetherPanelTopTileStreaks = nil
+---@type any
+BetterTogetherScroll = nil
+---@type any
+BetterTogetherScrollScrollBar = nil
+---@type any
+BetterTogetherScrollScrollBarScrollDownButton = nil
+---@type any
+BetterTogetherScrollScrollBarScrollUpButton = nil
+---@type any
+BetterTogetherScrollScrollBarThumbTexture = nil
+---@type any
+BetterTogetherSettingsPanel = nil
+---@type any
+BetterTogetherSettingsPanelText = nil
+---@type any
+BetterTogetherSettingsScroll = nil
+---@type any
+BetterTogetherSettingsScrollScrollBar = nil
+---@type any
+BetterTogetherSettingsScrollScrollBarScrollDownButton = nil
+---@type any
+BetterTogetherSettingsScrollScrollBarScrollUpButton = nil
+---@type any
+BetterTogetherSettingsScrollScrollBarThumbTexture = nil
+---@type any
 BindEnchant = nil
 ---@type any
 BindingButtonTemplate_IsSelected = nil
@@ -13012,6 +13100,30 @@ ChatConfigChannelSettings = nil
 ---@type any
 ChatConfigChannelSettingsAvailable = nil
 ---@type any
+ChatConfigChannelSettingsAvailableBox1 = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox1Button = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox1ButtonText = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox1Text = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox2 = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox2Button = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox2ButtonText = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox2Text = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox3 = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox3Button = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox3ButtonText = nil
+---@type any
+ChatConfigChannelSettingsAvailableBox3Text = nil
+---@type any
 ChatConfigChannelSettingsAvailableTitle = nil
 ---@type any
 ChatConfigChannelSettingsClassColorLegend = nil
@@ -13019,6 +13131,48 @@ ChatConfigChannelSettingsClassColorLegend = nil
 ChatConfigChannelSettingsClassColorLegendTitle = nil
 ---@type any
 ChatConfigChannelSettingsLeft = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox1 = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox1Check = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox1CheckText = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox1ColorClasses = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox1ColorSwatch = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox1ColorSwatchNormalTexture = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox1ColorSwatchSwatchBg = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox2 = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox2Check = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox2CheckText = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox2ColorClasses = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox2ColorSwatch = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox2ColorSwatchNormalTexture = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox2ColorSwatchSwatchBg = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox3 = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox3Check = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox3CheckText = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox3ColorClasses = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox3ColorSwatch = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox3ColorSwatchNormalTexture = nil
+---@type any
+ChatConfigChannelSettingsLeftCheckbox3ColorSwatchSwatchBg = nil
 ---@type any
 ChatConfigChannelSettingsLeftClassColorHeader = nil
 ---@type any
@@ -13717,24 +13871,6 @@ ChatConfigOtherSettings_OnShow = nil
 ChatConfigTextToSpeechChannelSettings = nil
 ---@type any
 ChatConfigTextToSpeechChannelSettingsLeft = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox1 = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox1Check = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox1CheckText = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox2 = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox2Check = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox2CheckText = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox3 = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox3Check = nil
----@type any
-ChatConfigTextToSpeechChannelSettingsLeftCheckbox3CheckText = nil
 ---@type any
 ChatConfigTextToSpeechChannelSettingsLeftTitle = nil
 ---@type any
@@ -65404,6 +65540,16 @@ PartyUtil = nil
 ---@type any
 PassClickToParent = nil
 ---@type any
+PeaversChangelogs = nil
+---@type any
+PeaversConsumablesData = nil
+---@type any
+PeaversHomeworkDB = nil
+---@type any
+PeaversHomework_OnAddonCompartmentClick = nil
+---@type any
+PeaversTalentsData = nil
+---@type any
 PercentageBetween = nil
 ---@type any
 PersonalNoteText = nil
@@ -72622,6 +72768,14 @@ SLASH_BENCHMARK1 = nil
 ---@type any
 SLASH_BENCHMARK2 = nil
 ---@type any
+SLASH_BETTERTOGETHER1 = nil
+---@type any
+SLASH_BETTERTOGETHER2 = nil
+---@type any
+SLASH_BETTERTOGETHER3 = nil
+---@type any
+SLASH_BETTERTOGETHER4 = nil
+---@type any
 SLASH_CAA1 = nil
 ---@type any
 SLASH_CAA_CONFIRMATION = nil
@@ -73687,6 +73841,10 @@ SLASH_PARTY3 = nil
 SLASH_PARTY4 = nil
 ---@type any
 SLASH_PARTY5 = nil
+---@type any
+SLASH_PEAVERSHOMEWORK1 = nil
+---@type any
+SLASH_PEAVERSHOUSINGDUMP1 = nil
 ---@type any
 SLASH_PERFREPORT1 = nil
 ---@type any
@@ -77561,6 +77719,20 @@ ScenarioQueueFrameSpecific = nil
 ScenarioQueueFrameSpecificList_InitButton = nil
 ---@type any
 ScenarioQueueFrameSpecificScrollFrame = nil
+---@type any
+ScenarioQueueFrameSpecificScrollFrameEnableButton = nil
+---@type any
+ScenarioQueueFrameSpecificScrollFrameExpandOrCollapseButton = nil
+---@type any
+ScenarioQueueFrameSpecificScrollFrameExpandOrCollapseButtonHighlight = nil
+---@type any
+ScenarioQueueFrameSpecificScrollFrameHeroicIcon = nil
+---@type any
+ScenarioQueueFrameSpecificScrollFrameInstanceLevel = nil
+---@type any
+ScenarioQueueFrameSpecificScrollFrameInstanceName = nil
+---@type any
+ScenarioQueueFrameSpecificScrollFrameLockedIndicator = nil
 ---@type any
 ScenarioQueueFrameSpecificScrollFrameScrollBackgroundBottomRight = nil
 ---@type any
