@@ -2964,6 +2964,166 @@ AccumulateOp = nil
 ---@type any
 AccumulatorMixin = nil
 ---@type any
+AceAddon30Frame = nil
+---@type any
+AceComm30Frame = nil
+---@type any
+AceConfigDialogTooltip = nil
+---@type any
+AceConfigDialogTooltipStatusBar = nil
+---@type any
+AceConfigDialogTooltipStatusBarTexture = nil
+---@type any
+AceConfigDialogTooltipTextLeft1 = nil
+---@type any
+AceConfigDialogTooltipTextLeft2 = nil
+---@type any
+AceConfigDialogTooltipTextRight1 = nil
+---@type any
+AceConfigDialogTooltipTextRight2 = nil
+---@type any
+AceConfigDialogTooltipTexture1 = nil
+---@type any
+AceConfigDialogTooltipTexture10 = nil
+---@type any
+AceConfigDialogTooltipTexture11 = nil
+---@type any
+AceConfigDialogTooltipTexture12 = nil
+---@type any
+AceConfigDialogTooltipTexture13 = nil
+---@type any
+AceConfigDialogTooltipTexture14 = nil
+---@type any
+AceConfigDialogTooltipTexture15 = nil
+---@type any
+AceConfigDialogTooltipTexture16 = nil
+---@type any
+AceConfigDialogTooltipTexture17 = nil
+---@type any
+AceConfigDialogTooltipTexture18 = nil
+---@type any
+AceConfigDialogTooltipTexture19 = nil
+---@type any
+AceConfigDialogTooltipTexture2 = nil
+---@type any
+AceConfigDialogTooltipTexture20 = nil
+---@type any
+AceConfigDialogTooltipTexture21 = nil
+---@type any
+AceConfigDialogTooltipTexture22 = nil
+---@type any
+AceConfigDialogTooltipTexture23 = nil
+---@type any
+AceConfigDialogTooltipTexture24 = nil
+---@type any
+AceConfigDialogTooltipTexture25 = nil
+---@type any
+AceConfigDialogTooltipTexture26 = nil
+---@type any
+AceConfigDialogTooltipTexture27 = nil
+---@type any
+AceConfigDialogTooltipTexture28 = nil
+---@type any
+AceConfigDialogTooltipTexture29 = nil
+---@type any
+AceConfigDialogTooltipTexture3 = nil
+---@type any
+AceConfigDialogTooltipTexture30 = nil
+---@type any
+AceConfigDialogTooltipTexture4 = nil
+---@type any
+AceConfigDialogTooltipTexture5 = nil
+---@type any
+AceConfigDialogTooltipTexture6 = nil
+---@type any
+AceConfigDialogTooltipTexture7 = nil
+---@type any
+AceConfigDialogTooltipTexture8 = nil
+---@type any
+AceConfigDialogTooltipTexture9 = nil
+---@type any
+AceEvent30Frame = nil
+---@type any
+AceGUIEditBoxInsertLink = nil
+---@type any
+AceGUIMultiLineEditBoxInsertLink = nil
+---@type any
+AceGUITooltip = nil
+---@type any
+AceGUITooltipStatusBar = nil
+---@type any
+AceGUITooltipStatusBarTexture = nil
+---@type any
+AceGUITooltipTextLeft1 = nil
+---@type any
+AceGUITooltipTextLeft2 = nil
+---@type any
+AceGUITooltipTextRight1 = nil
+---@type any
+AceGUITooltipTextRight2 = nil
+---@type any
+AceGUITooltipTexture1 = nil
+---@type any
+AceGUITooltipTexture10 = nil
+---@type any
+AceGUITooltipTexture11 = nil
+---@type any
+AceGUITooltipTexture12 = nil
+---@type any
+AceGUITooltipTexture13 = nil
+---@type any
+AceGUITooltipTexture14 = nil
+---@type any
+AceGUITooltipTexture15 = nil
+---@type any
+AceGUITooltipTexture16 = nil
+---@type any
+AceGUITooltipTexture17 = nil
+---@type any
+AceGUITooltipTexture18 = nil
+---@type any
+AceGUITooltipTexture19 = nil
+---@type any
+AceGUITooltipTexture2 = nil
+---@type any
+AceGUITooltipTexture20 = nil
+---@type any
+AceGUITooltipTexture21 = nil
+---@type any
+AceGUITooltipTexture22 = nil
+---@type any
+AceGUITooltipTexture23 = nil
+---@type any
+AceGUITooltipTexture24 = nil
+---@type any
+AceGUITooltipTexture25 = nil
+---@type any
+AceGUITooltipTexture26 = nil
+---@type any
+AceGUITooltipTexture27 = nil
+---@type any
+AceGUITooltipTexture28 = nil
+---@type any
+AceGUITooltipTexture29 = nil
+---@type any
+AceGUITooltipTexture3 = nil
+---@type any
+AceGUITooltipTexture30 = nil
+---@type any
+AceGUITooltipTexture4 = nil
+---@type any
+AceGUITooltipTexture5 = nil
+---@type any
+AceGUITooltipTexture6 = nil
+---@type any
+AceGUITooltipTexture7 = nil
+---@type any
+AceGUITooltipTexture8 = nil
+---@type any
+AceGUITooltipTexture9 = nil
+---@type any
+AceGUIWidgetLSMlists = nil
+---@type any
 AchievementAlertFrame_OnClick = nil
 ---@type any
 AchievementAlertFrame_SetUp = nil
@@ -4222,6 +4382,8 @@ AscendStop = nil
 ---@type any
 AssistedCombatManager = nil
 ---@type any
+AssistedCombatRotationSpellFrameMixin = nil
+---@type any
 AsyncCallbackAPIType = nil
 ---@type any
 AsyncCallbackSystemMixin = nil
@@ -5148,6 +5310,8 @@ BINDING_HEADER_OTHER = nil
 ---@type any
 BINDING_HEADER_PING_SYSTEM = nil
 ---@type any
+BINDING_HEADER_Prat = nil
+---@type any
 BINDING_HEADER_RAID_TARGET = nil
 ---@type any
 BINDING_HEADER_TARGETING = nil
@@ -5339,6 +5503,8 @@ BINDING_NAME_COMMENTATORZOOMIN = nil
 BINDING_NAME_COMMENTATORZOOMOUT = nil
 ---@type any
 BINDING_NAME_CYCLEFOLLOWTRANSITONSPEED = nil
+---@type any
+BINDING_NAME_CopySelected = nil
 ---@type any
 BINDING_NAME_DISMOUNT = nil
 ---@type any
@@ -5714,6 +5880,8 @@ BINDING_NAME_NEXTACTIONPAGE = nil
 ---@type any
 BINDING_NAME_NEXTVIEW = nil
 ---@type any
+BINDING_NAME_NextTab = nil
+---@type any
 BINDING_NAME_OPENALLBAGS = nil
 ---@type any
 BINDING_NAME_OPENCHAT = nil
@@ -5841,6 +6009,8 @@ BINDING_NAME_SWAPUNITFRAMES = nil
 BINDING_NAME_SWINGCAMERA = nil
 ---@type any
 BINDING_NAME_SWINGCAMERAANDPLAYER = nil
+---@type any
+BINDING_NAME_SmartGroup = nil
 ---@type any
 BINDING_NAME_TARGETARENA1 = nil
 ---@type any
@@ -6139,6 +6309,42 @@ BINDING_NAME_WOWLABS_MULTIACTIONBAR2BUTTON2 = nil
 BINDING_NAME_WOWLABS_SWAP_OFFENSIVES = nil
 ---@type any
 BINDING_NAME_WOWLABS_SWAP_UTLITIES = nil
+---@type any
+BINDING_NAME_eight = nil
+---@type any
+BINDING_NAME_five = nil
+---@type any
+BINDING_NAME_four = nil
+---@type any
+BINDING_NAME_guild = nil
+---@type any
+BINDING_NAME_instance = nil
+---@type any
+BINDING_NAME_nine = nil
+---@type any
+BINDING_NAME_officer = nil
+---@type any
+BINDING_NAME_one = nil
+---@type any
+BINDING_NAME_party = nil
+---@type any
+BINDING_NAME_raid = nil
+---@type any
+BINDING_NAME_raidwarn = nil
+---@type any
+BINDING_NAME_say = nil
+---@type any
+BINDING_NAME_seven = nil
+---@type any
+BINDING_NAME_six = nil
+---@type any
+BINDING_NAME_three = nil
+---@type any
+BINDING_NAME_two = nil
+---@type any
+BINDING_NAME_whisper = nil
+---@type any
+BINDING_NAME_yell = nil
 ---@type any
 BINDING_TAG_DECOR = nil
 ---@type any
@@ -7242,6 +7448,8 @@ BUFF_TOOLTIP_TRANSMOG = nil
 ---@type any
 BUFF_WARNING_TIME = nil
 ---@type any
+BUGGRABBER_ERRORS_PER_SEC_BEFORE_THROTTLE = nil
+---@type any
 BUG_BUTTON = nil
 ---@type any
 BUG_CATEGORY1 = nil
@@ -7610,6 +7818,8 @@ BasePrivateAuraBehaviorMixin = nil
 ---@type any
 BaseScrollBoxEvents = nil
 ---@type any
+BaseSpellBookCategoryMixin = nil
+---@type any
 BaseSpellSearchFilterMixin = nil
 ---@type any
 BaseTextTimerMixin = nil
@@ -7663,6 +7873,64 @@ BeginActionBarTransition = nil
 BenchmarkUtil = nil
 ---@type any
 BetterDate = nil
+---@type any
+BetterTogether = nil
+---@type any
+BetterTogetherCharDB = nil
+---@type any
+BetterTogetherDB = nil
+---@type any
+BetterTogetherEventFrame = nil
+---@type any
+BetterTogetherMainTab1 = nil
+---@type any
+BetterTogetherMainTab2 = nil
+---@type any
+BetterTogetherPanel = nil
+---@type any
+BetterTogetherPanelBg = nil
+---@type any
+BetterTogetherPanelCloseButton = nil
+---@type any
+BetterTogetherPanelInset = nil
+---@type any
+BetterTogetherPanelInsetScrollBar = nil
+---@type any
+BetterTogetherPanelInsetScrollBarScrollDownButton = nil
+---@type any
+BetterTogetherPanelInsetScrollBarScrollUpButton = nil
+---@type any
+BetterTogetherPanelInsetScrollBarThumbTexture = nil
+---@type any
+BetterTogetherPanelPortrait = nil
+---@type any
+BetterTogetherPanelText = nil
+---@type any
+BetterTogetherPanelTitleText = nil
+---@type any
+BetterTogetherScroll = nil
+---@type any
+BetterTogetherScrollScrollBar = nil
+---@type any
+BetterTogetherScrollScrollBarScrollDownButton = nil
+---@type any
+BetterTogetherScrollScrollBarScrollUpButton = nil
+---@type any
+BetterTogetherScrollScrollBarThumbTexture = nil
+---@type any
+BetterTogetherSettingsPanel = nil
+---@type any
+BetterTogetherSettingsPanelText = nil
+---@type any
+BetterTogetherSettingsScroll = nil
+---@type any
+BetterTogetherSettingsScrollScrollBar = nil
+---@type any
+BetterTogetherSettingsScrollScrollBarScrollDownButton = nil
+---@type any
+BetterTogetherSettingsScrollScrollBarScrollUpButton = nil
+---@type any
+BetterTogetherSettingsScrollScrollBarThumbTexture = nil
 ---@type any
 BindEnchant = nil
 ---@type any
@@ -8025,6 +8293,16 @@ BuffFramePrivateAuraAnchorMixin = nil
 BuffIconCooldownViewer = nil
 ---@type any
 BuffIconCooldownViewerMixin = nil
+---@type any
+BugGrabber = nil
+---@type any
+BugGrabberDB = nil
+---@type any
+BugSack = nil
+---@type any
+BugSackDB = nil
+---@type any
+BugSackLDBIconDB = nil
 ---@type any
 BuildColoredListString = nil
 ---@type any
@@ -9814,6 +10092,8 @@ CHAT_MSG_BN_CONVERSATION = nil
 ---@type any
 CHAT_MSG_BN_WHISPER = nil
 ---@type any
+CHAT_MSG_BN_WHISPER_INFORM = nil
+---@type any
 CHAT_MSG_CHANNEL_LIST = nil
 ---@type any
 CHAT_MSG_COMBAT_HONOR_GAIN = nil
@@ -9831,6 +10111,8 @@ CHAT_MSG_GUILD_ACHIEVEMENT = nil
 CHAT_MSG_GUILD_ITEM_LOOTED = nil
 ---@type any
 CHAT_MSG_INSTANCE_CHAT = nil
+---@type any
+CHAT_MSG_INSTANCE_CHAT_LEADER = nil
 ---@type any
 CHAT_MSG_LOOT = nil
 ---@type any
@@ -10021,6 +10303,10 @@ CHAT_SET_VOICE_NOTICE_BN = nil
 CHAT_SHOW_IME = nil
 ---@type any
 CHAT_SILENCE = nil
+---@type any
+CHAT_SMARTGROUP_GET = nil
+---@type any
+CHAT_SMARTGROUP_SEND = nil
 ---@type any
 CHAT_STYLE = nil
 ---@type any
@@ -15290,6 +15576,12 @@ ChatFrame10ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame10ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame10ChatSearchEditBox = nil
+---@type any
+ChatFrame10ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame10ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame10ClickAnywhereButton = nil
 ---@type any
 ChatFrame10EditBox = nil
@@ -15317,6 +15609,8 @@ ChatFrame10EditBoxPrompt = nil
 ChatFrame10EditBoxRight = nil
 ---@type any
 ChatFrame10LeftTexture = nil
+---@type any
+ChatFrame10PratCCReminder = nil
 ---@type any
 ChatFrame10ResizeButton = nil
 ---@type any
@@ -15364,6 +15658,12 @@ ChatFrame1ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame1ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame1ChatSearchEditBox = nil
+---@type any
+ChatFrame1ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame1ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame1ClickAnywhereButton = nil
 ---@type any
 ChatFrame1EditBox = nil
@@ -15391,6 +15691,8 @@ ChatFrame1EditBoxPrompt = nil
 ChatFrame1EditBoxRight = nil
 ---@type any
 ChatFrame1LeftTexture = nil
+---@type any
+ChatFrame1PratCCReminder = nil
 ---@type any
 ChatFrame1ResizeButton = nil
 ---@type any
@@ -15440,6 +15742,12 @@ ChatFrame2ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame2ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame2ChatSearchEditBox = nil
+---@type any
+ChatFrame2ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame2ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame2ClickAnywhereButton = nil
 ---@type any
 ChatFrame2EditBox = nil
@@ -15467,6 +15775,8 @@ ChatFrame2EditBoxPrompt = nil
 ChatFrame2EditBoxRight = nil
 ---@type any
 ChatFrame2LeftTexture = nil
+---@type any
+ChatFrame2PratCCReminder = nil
 ---@type any
 ChatFrame2ResizeButton = nil
 ---@type any
@@ -15516,6 +15826,12 @@ ChatFrame3ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame3ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame3ChatSearchEditBox = nil
+---@type any
+ChatFrame3ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame3ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame3ClickAnywhereButton = nil
 ---@type any
 ChatFrame3EditBox = nil
@@ -15543,6 +15859,8 @@ ChatFrame3EditBoxPrompt = nil
 ChatFrame3EditBoxRight = nil
 ---@type any
 ChatFrame3LeftTexture = nil
+---@type any
+ChatFrame3PratCCReminder = nil
 ---@type any
 ChatFrame3ResizeButton = nil
 ---@type any
@@ -15592,6 +15910,12 @@ ChatFrame4ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame4ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame4ChatSearchEditBox = nil
+---@type any
+ChatFrame4ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame4ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame4ClickAnywhereButton = nil
 ---@type any
 ChatFrame4EditBox = nil
@@ -15619,6 +15943,8 @@ ChatFrame4EditBoxPrompt = nil
 ChatFrame4EditBoxRight = nil
 ---@type any
 ChatFrame4LeftTexture = nil
+---@type any
+ChatFrame4PratCCReminder = nil
 ---@type any
 ChatFrame4ResizeButton = nil
 ---@type any
@@ -15668,6 +15994,12 @@ ChatFrame5ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame5ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame5ChatSearchEditBox = nil
+---@type any
+ChatFrame5ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame5ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame5ClickAnywhereButton = nil
 ---@type any
 ChatFrame5EditBox = nil
@@ -15695,6 +16027,8 @@ ChatFrame5EditBoxPrompt = nil
 ChatFrame5EditBoxRight = nil
 ---@type any
 ChatFrame5LeftTexture = nil
+---@type any
+ChatFrame5PratCCReminder = nil
 ---@type any
 ChatFrame5ResizeButton = nil
 ---@type any
@@ -15744,6 +16078,12 @@ ChatFrame6ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame6ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame6ChatSearchEditBox = nil
+---@type any
+ChatFrame6ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame6ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame6ClickAnywhereButton = nil
 ---@type any
 ChatFrame6EditBox = nil
@@ -15771,6 +16111,8 @@ ChatFrame6EditBoxPrompt = nil
 ChatFrame6EditBoxRight = nil
 ---@type any
 ChatFrame6LeftTexture = nil
+---@type any
+ChatFrame6PratCCReminder = nil
 ---@type any
 ChatFrame6ResizeButton = nil
 ---@type any
@@ -15820,6 +16162,12 @@ ChatFrame7ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame7ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame7ChatSearchEditBox = nil
+---@type any
+ChatFrame7ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame7ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame7ClickAnywhereButton = nil
 ---@type any
 ChatFrame7EditBox = nil
@@ -15847,6 +16195,8 @@ ChatFrame7EditBoxPrompt = nil
 ChatFrame7EditBoxRight = nil
 ---@type any
 ChatFrame7LeftTexture = nil
+---@type any
+ChatFrame7PratCCReminder = nil
 ---@type any
 ChatFrame7ResizeButton = nil
 ---@type any
@@ -15896,6 +16246,12 @@ ChatFrame8ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame8ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame8ChatSearchEditBox = nil
+---@type any
+ChatFrame8ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame8ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame8ClickAnywhereButton = nil
 ---@type any
 ChatFrame8EditBox = nil
@@ -15923,6 +16279,8 @@ ChatFrame8EditBoxPrompt = nil
 ChatFrame8EditBoxRight = nil
 ---@type any
 ChatFrame8LeftTexture = nil
+---@type any
+ChatFrame8PratCCReminder = nil
 ---@type any
 ChatFrame8ResizeButton = nil
 ---@type any
@@ -15972,6 +16330,12 @@ ChatFrame9ButtonFrameTopRightTexture = nil
 ---@type any
 ChatFrame9ButtonFrameTopTexture = nil
 ---@type any
+ChatFrame9ChatSearchEditBox = nil
+---@type any
+ChatFrame9ChatSearchEditBoxClearButton = nil
+---@type any
+ChatFrame9ChatSearchEditBoxSearchIcon = nil
+---@type any
 ChatFrame9ClickAnywhereButton = nil
 ---@type any
 ChatFrame9EditBox = nil
@@ -15999,6 +16363,8 @@ ChatFrame9EditBoxPrompt = nil
 ChatFrame9EditBoxRight = nil
 ---@type any
 ChatFrame9LeftTexture = nil
+---@type any
+ChatFrame9PratCCReminder = nil
 ---@type any
 ChatFrame9ResizeButton = nil
 ---@type any
@@ -16166,6 +16532,8 @@ ChatHistory_GetChatType = nil
 ---@type any
 ChatHistory_GetToken = nil
 ---@type any
+ChatThrottleLib = nil
+---@type any
 ChatTypeGroup = nil
 ---@type any
 ChatTypeGroupInverted = nil
@@ -16310,7 +16678,75 @@ ClassPowerBar = nil
 ---@type any
 ClassResourceBarMixin = nil
 ---@type any
+ClassSpecContentFrameMixin = nil
+---@type any
+ClassSpecFrameMixin = nil
+---@type any
+ClassSpecSpellMixin = nil
+---@type any
+ClassTalentBorderSheenSyncKey = nil
+---@type any
+ClassTalentButtonArtMixin = nil
+---@type any
+ClassTalentButtonBaseMixin = nil
+---@type any
+ClassTalentButtonCapstonePipMixin = nil
+---@type any
+ClassTalentButtonCapstoneWithTrackMixin = nil
+---@type any
+ClassTalentButtonSelectMixin = nil
+---@type any
+ClassTalentButtonSpendMixin = nil
+---@type any
+ClassTalentButtonSplitSelectMixin = nil
+---@type any
+ClassTalentCurrencyDisplayMixin = nil
+---@type any
+ClassTalentEdgeArrowMixin = nil
+---@type any
 ClassTalentHelper = nil
+---@type any
+ClassTalentImportExportMixin = nil
+---@type any
+ClassTalentLoadoutCreateDialog = nil
+---@type any
+ClassTalentLoadoutCreateDialogMixin = nil
+---@type any
+ClassTalentLoadoutCreateDialogNameControlMixin = nil
+---@type any
+ClassTalentLoadoutCreateDialogText = nil
+---@type any
+ClassTalentLoadoutDialogInputControlMixin = nil
+---@type any
+ClassTalentLoadoutDialogMixin = nil
+---@type any
+ClassTalentLoadoutDialogNameControlMixin = nil
+---@type any
+ClassTalentLoadoutEditDialog = nil
+---@type any
+ClassTalentLoadoutEditDialogMixin = nil
+---@type any
+ClassTalentLoadoutEditDialogNameControlMixin = nil
+---@type any
+ClassTalentLoadoutEditDialogText = nil
+---@type any
+ClassTalentLoadoutImportDialog = nil
+---@type any
+ClassTalentLoadoutImportDialogImportControlMixin = nil
+---@type any
+ClassTalentLoadoutImportDialogMixin = nil
+---@type any
+ClassTalentLoadoutImportDialogNameControlMixin = nil
+---@type any
+ClassTalentLoadoutImportDialogText = nil
+---@type any
+ClassTalentSearchMixin = nil
+---@type any
+ClassTalentSelectionChoiceMixin = nil
+---@type any
+ClassTalentUtil = nil
+---@type any
+ClassTalentsFrameMixin = nil
 ---@type any
 ClassTrainerFrame_LoadUI = nil
 ---@type any
@@ -35994,6 +36430,70 @@ GuildControlUIRankOrderFrameRank1ShiftUpButton = nil
 ---@type any
 GuildControlUIRankOrderFrameRank1ShiftUpButtonIcon = nil
 ---@type any
+GuildControlUIRankOrderFrameRank2 = nil
+---@type any
+GuildControlUIRankOrderFrameRank2DeleteButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank2DeleteButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank2NameEditBox = nil
+---@type any
+GuildControlUIRankOrderFrameRank2ShiftDownButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank2ShiftDownButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank2ShiftUpButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank2ShiftUpButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank3 = nil
+---@type any
+GuildControlUIRankOrderFrameRank3DeleteButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank3DeleteButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank3NameEditBox = nil
+---@type any
+GuildControlUIRankOrderFrameRank3ShiftDownButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank3ShiftDownButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank3ShiftUpButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank3ShiftUpButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank4 = nil
+---@type any
+GuildControlUIRankOrderFrameRank4DeleteButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank4DeleteButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank4NameEditBox = nil
+---@type any
+GuildControlUIRankOrderFrameRank4ShiftDownButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank4ShiftDownButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank4ShiftUpButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank4ShiftUpButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank5 = nil
+---@type any
+GuildControlUIRankOrderFrameRank5DeleteButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank5DeleteButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank5NameEditBox = nil
+---@type any
+GuildControlUIRankOrderFrameRank5ShiftDownButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank5ShiftDownButtonIcon = nil
+---@type any
+GuildControlUIRankOrderFrameRank5ShiftUpButton = nil
+---@type any
+GuildControlUIRankOrderFrameRank5ShiftUpButtonIcon = nil
+---@type any
 GuildControlUIRankPermissions_HideGuildBankOptions = nil
 ---@type any
 GuildControlUIRankSettingsFrame = nil
@@ -39117,6 +39617,30 @@ HelpTipCloseButtonMixin = nil
 HelpTipStateMachineBasedTutorialMixin = nil
 ---@type any
 HelpTipTemplateMixin = nil
+---@type any
+HeroSpecButtonMixin = nil
+---@type any
+HeroTalentActivateButtonMixin = nil
+---@type any
+HeroTalentCollapseButtonMixin = nil
+---@type any
+HeroTalentSpecContentMixin = nil
+---@type any
+HeroTalentsContainerMixin = nil
+---@type any
+HeroTalentsSelectionDialog = nil
+---@type any
+HeroTalentsSelectionDialogBg = nil
+---@type any
+HeroTalentsSelectionDialogTitleText = nil
+---@type any
+HeroTalentsSelectionDialogTopTileStreaks = nil
+---@type any
+HeroTalentsSelectionMixin = nil
+---@type any
+HeroTalentsUnlockedAnimFrame = nil
+---@type any
+HeroTalentsUnlockedAnimFrameMixin = nil
 ---@type any
 HideDropDownMenu = nil
 ---@type any
@@ -48236,6 +48760,90 @@ LevelUpRolloverAnimationMixin = nil
 ---@type any
 LfgListLeaverBadgeMixin = nil
 ---@type any
+LibDBIcon = nil
+---@type any
+LibDBIcon10_BugSack = nil
+---@type any
+LibDBIcon10_SimulationCraft = nil
+---@type any
+LibDBIconTooltip = nil
+---@type any
+LibDBIconTooltipStatusBar = nil
+---@type any
+LibDBIconTooltipStatusBarTexture = nil
+---@type any
+LibDBIconTooltipTextLeft1 = nil
+---@type any
+LibDBIconTooltipTextLeft2 = nil
+---@type any
+LibDBIconTooltipTextRight1 = nil
+---@type any
+LibDBIconTooltipTextRight2 = nil
+---@type any
+LibDBIconTooltipTexture1 = nil
+---@type any
+LibDBIconTooltipTexture10 = nil
+---@type any
+LibDBIconTooltipTexture11 = nil
+---@type any
+LibDBIconTooltipTexture12 = nil
+---@type any
+LibDBIconTooltipTexture13 = nil
+---@type any
+LibDBIconTooltipTexture14 = nil
+---@type any
+LibDBIconTooltipTexture15 = nil
+---@type any
+LibDBIconTooltipTexture16 = nil
+---@type any
+LibDBIconTooltipTexture17 = nil
+---@type any
+LibDBIconTooltipTexture18 = nil
+---@type any
+LibDBIconTooltipTexture19 = nil
+---@type any
+LibDBIconTooltipTexture2 = nil
+---@type any
+LibDBIconTooltipTexture20 = nil
+---@type any
+LibDBIconTooltipTexture21 = nil
+---@type any
+LibDBIconTooltipTexture22 = nil
+---@type any
+LibDBIconTooltipTexture23 = nil
+---@type any
+LibDBIconTooltipTexture24 = nil
+---@type any
+LibDBIconTooltipTexture25 = nil
+---@type any
+LibDBIconTooltipTexture26 = nil
+---@type any
+LibDBIconTooltipTexture27 = nil
+---@type any
+LibDBIconTooltipTexture28 = nil
+---@type any
+LibDBIconTooltipTexture29 = nil
+---@type any
+LibDBIconTooltipTexture3 = nil
+---@type any
+LibDBIconTooltipTexture30 = nil
+---@type any
+LibDBIconTooltipTexture4 = nil
+---@type any
+LibDBIconTooltipTexture5 = nil
+---@type any
+LibDBIconTooltipTexture6 = nil
+---@type any
+LibDBIconTooltipTexture7 = nil
+---@type any
+LibDBIconTooltipTexture8 = nil
+---@type any
+LibDBIconTooltipTexture9 = nil
+---@type any
+LibRealmInfo = nil
+---@type any
+LibStub = nil
+---@type any
 LineMixin = nil
 ---@type any
 LinearizedTreeDataProviderMixin = nil
@@ -48875,6 +49483,8 @@ MAX_ARENA_TEAMS = nil
 MAX_BOSS_FRAMES = nil
 ---@type any
 MAX_BOUNTY_OBJECTIVES = nil
+---@type any
+MAX_BUGGRABBER_ERRORS = nil
 ---@type any
 MAX_BUY_GUILDBANK_TABS = nil
 ---@type any
@@ -54338,6 +54948,14 @@ NUM_WORLDMAP_PATCH_TILES = nil
 ---@type any
 NUM_WORLD_RAID_MARKERS = nil
 ---@type any
+NamePlate1 = nil
+---@type any
+NamePlate2 = nil
+---@type any
+NamePlate3 = nil
+---@type any
+NamePlate4 = nil
+---@type any
 NamePlateAuraItemMixin = nil
 ---@type any
 NamePlateAurasMixin = nil
@@ -57117,6 +57735,18 @@ PASSIVE_SPELL_FONT_COLOR = nil
 PASSIVE_SPELL_FONT_COLOR_CODE = nil
 ---@type any
 PASSWORD = nil
+---@type any
+PCAutoCloseWithAHCheckbox = nil
+---@type any
+PCAutoCloseWithAHCheckboxText = nil
+---@type any
+PCAutoOpenWithAHCheckbox = nil
+---@type any
+PCAutoOpenWithAHCheckboxText = nil
+---@type any
+PCShowAHTabCheckbox = nil
+---@type any
+PCShowAHTabCheckboxText = nil
 ---@type any
 PENDING_BUTTON_MIN_HEIGHT = nil
 ---@type any
@@ -61120,6 +61750,30 @@ PartyUtil = nil
 ---@type any
 PassClickToParent = nil
 ---@type any
+PeaversChangelogs = nil
+---@type any
+PeaversCommons = nil
+---@type any
+PeaversCommonsDB = nil
+---@type any
+PeaversConfig = nil
+---@type any
+PeaversConfigDB = nil
+---@type any
+PeaversConfigFrame = nil
+---@type any
+PeaversConfigScrollFrame = nil
+---@type any
+PeaversConsumables = nil
+---@type any
+PeaversConsumablesDB = nil
+---@type any
+PeaversConsumablesData = nil
+---@type any
+PeaversTalentsDB = nil
+---@type any
+PeaversTalentsData = nil
+---@type any
 PercentageBetween = nil
 ---@type any
 PerksProgramFrame_LoadUI = nil
@@ -61948,6 +62602,26 @@ PlayerPowerBarAltStatusFrame = nil
 ---@type any
 PlayerPowerBarAltStatusFrameText = nil
 ---@type any
+PlayerSpellsFrame = nil
+---@type any
+PlayerSpellsFrameBg = nil
+---@type any
+PlayerSpellsFrameClearButton = nil
+---@type any
+PlayerSpellsFrameCloseButton = nil
+---@type any
+PlayerSpellsFrameHighlight = nil
+---@type any
+PlayerSpellsFrameMixin = nil
+---@type any
+PlayerSpellsFramePortrait = nil
+---@type any
+PlayerSpellsFrameSearchIcon = nil
+---@type any
+PlayerSpellsFrameText = nil
+---@type any
+PlayerSpellsFrameTitleText = nil
+---@type any
 PlayerSpellsFrame_LoadUI = nil
 ---@type any
 PlayerSpellsMicroButton = nil
@@ -62040,6 +62714,38 @@ PowerBarColor = nil
 ---@type any
 PowerDependencyLineMixin = nil
 ---@type any
+Prat = nil
+---@type any
+Prat3CharDB = nil
+---@type any
+Prat3DB = nil
+---@type any
+Prat3HighCPUPerCharDB = nil
+---@type any
+PratCCFrame = nil
+---@type any
+PratCCFrameButton = nil
+---@type any
+PratCCFrameScroll = nil
+---@type any
+PratCCFrameScrollScrollBar = nil
+---@type any
+PratCCFrameScrollScrollBarScrollDownButton = nil
+---@type any
+PratCCFrameScrollScrollBarScrollUpButton = nil
+---@type any
+PratCCFrameScrollScrollBarThumbTexture = nil
+---@type any
+PratCCFrameScrollText = nil
+---@type any
+PratCCText = nil
+---@type any
+Prat_PopupFrame = nil
+---@type any
+Prat_PopupFrameText = nil
+---@type any
+Prat_ToggleOptionsWindow = nil
+---@type any
 PreMatchArenaUnitFrameMixin = nil
 ---@type any
 PredictedSettingBaseMixin = nil
@@ -62121,6 +62827,14 @@ ProxyUtil = nil
 PutItemInBackpack = nil
 ---@type any
 PutItemInBag = nil
+---@type any
+PvPTalentListButtonMixin = nil
+---@type any
+PvPTalentListMixin = nil
+---@type any
+PvPTalentSlotButtonMixin = nil
+---@type any
+PvPTalentSlotTrayMixin = nil
 ---@type any
 PvPTalentsSearchSourceMixin = nil
 ---@type any
@@ -63531,6 +64245,8 @@ QueueStatusEntry_SetUpPvPReadyCheck = nil
 QueueStatusEntry_SetUpWorldPvP = nil
 ---@type any
 QueueStatusFrame = nil
+---@type any
+QueueStatusFrameCount = nil
 ---@type any
 QueueStatusFrameMixin = nil
 ---@type any
@@ -67324,6 +68040,18 @@ SLASH_ABANDON1 = nil
 ---@type any
 SLASH_ABANDON2 = nil
 ---@type any
+SLASH_ACECONSOLE_COPYCHAT1 = nil
+---@type any
+SLASH_ACECONSOLE_PRAT1 = nil
+---@type any
+SLASH_ACECONSOLE_PRATBLACKLIST1 = nil
+---@type any
+SLASH_ACECONSOLE_PRATDEBUGMSG1 = nil
+---@type any
+SLASH_ACECONSOLE_PRATUNBLACKLIST1 = nil
+---@type any
+SLASH_ACECONSOLE_SIMC1 = nil
+---@type any
 SLASH_ACHIEVEMENTUI1 = nil
 ---@type any
 SLASH_ACHIEVEMENTUI2 = nil
@@ -67355,6 +68083,18 @@ SLASH_ASSIST4 = nil
 SLASH_BENCHMARK1 = nil
 ---@type any
 SLASH_BENCHMARK2 = nil
+---@type any
+SLASH_BETTERTOGETHER1 = nil
+---@type any
+SLASH_BETTERTOGETHER2 = nil
+---@type any
+SLASH_BETTERTOGETHER3 = nil
+---@type any
+SLASH_BETTERTOGETHER4 = nil
+---@type any
+SLASH_BugGrabber1 = nil
+---@type any
+SLASH_BugSack1 = nil
 ---@type any
 SLASH_CAA1 = nil
 ---@type any
@@ -67966,6 +68706,8 @@ SLASH_CONSOLE1 = nil
 ---@type any
 SLASH_CONSOLE2 = nil
 ---@type any
+SLASH_CONSUMABLES1 = nil
+---@type any
 SLASH_COOLDOWNMANAGER1 = nil
 ---@type any
 SLASH_COOLDOWNMANAGER2 = nil
@@ -68079,6 +68821,8 @@ SLASH_EVENTTRACE3 = nil
 SLASH_EVENTTRACE4 = nil
 ---@type any
 SLASH_EVENTVERBOSE1 = nil
+---@type any
+SLASH_FIND1 = nil
 ---@type any
 SLASH_FOCUS1 = nil
 ---@type any
@@ -68454,6 +69198,18 @@ SLASH_PARTY5 = nil
 ---@type any
 SLASH_PARTY_VOICE1 = nil
 ---@type any
+SLASH_PCDEBUG1 = nil
+---@type any
+SLASH_PCONS1 = nil
+---@type any
+SLASH_PEAVERSCONFIG1 = nil
+---@type any
+SLASH_PEAVERSCONFIG2 = nil
+---@type any
+SLASH_PEAVERSTALENTS1 = nil
+---@type any
+SLASH_PEAVERSTALENTS2 = nil
+---@type any
 SLASH_PET_AGGRESSIVE1 = nil
 ---@type any
 SLASH_PET_AGGRESSIVE2 = nil
@@ -68677,6 +69433,10 @@ SLASH_SET_TITLE2 = nil
 SLASH_SHARE1 = nil
 ---@type any
 SLASH_SHARE2 = nil
+---@type any
+SLASH_SMARTGROUP1 = nil
+---@type any
+SLASH_SMARTGROUP2 = nil
 ---@type any
 SLASH_SMART_WHISPER1 = nil
 ---@type any
@@ -69621,6 +70381,8 @@ SPEC_PALADIN_RETRIBUTION = nil
 SPEC_PRIEST_SHADOW = nil
 ---@type any
 SPEC_SHAMAN_RESTORATION = nil
+---@type any
+SPEC_STAT_STRINGS = nil
 ---@type any
 SPEC_WARLOCK_AFFLICTION = nil
 ---@type any
@@ -74874,6 +75636,8 @@ Sign = nil
 ---@type any
 SignPetition = nil
 ---@type any
+SimcLDB = nil
+---@type any
 SimpleCheckout = nil
 ---@type any
 SimpleCheckoutInboundInterface = nil
@@ -74881,6 +75645,10 @@ SimpleCheckoutInboundInterface = nil
 SimpleTooltipConstants = nil
 ---@type any
 SimpleTooltipRegionMixin = nil
+---@type any
+SimulationCraftDB = nil
+---@type any
+SimulationcraftAPI = nil
 ---@type any
 SkillLineSpecsUnlockedAlertFrameMixin = nil
 ---@type any
@@ -75008,7 +75776,29 @@ SpellActivationOverlayMixin = nil
 ---@type any
 SpellActivationOverlayTextureMixin = nil
 ---@type any
+SpellBookCategoryTabMixin = nil
+---@type any
+SpellBookClassCategoryMixin = nil
+---@type any
+SpellBookFrameMixin = nil
+---@type any
+SpellBookFrameTutorialsMixin = nil
+---@type any
+SpellBookFrame_HelpPlates = nil
+---@type any
+SpellBookGeneralCategoryMixin = nil
+---@type any
+SpellBookHeaderMixin = nil
+---@type any
+SpellBookItemButtonMixin = nil
+---@type any
+SpellBookItemMixin = nil
+---@type any
 SpellBookItemSearchSourceMixin = nil
+---@type any
+SpellBookPetCategoryMixin = nil
+---@type any
+SpellBookSearchMixin = nil
 ---@type any
 SpellCanTargetGarrisonFollower = nil
 ---@type any
@@ -78796,6 +79586,10 @@ TalentEdgeBaseMixin = nil
 ---@type any
 TalentEdgeStraightMixin = nil
 ---@type any
+TalentExportButton = nil
+---@type any
+TalentExportButtonText = nil
+---@type any
 TalentFrameBaseButtonsParentMixin = nil
 ---@type any
 TalentFrameBaseMixin = nil
@@ -79510,7 +80304,13 @@ TopBannerQueue = nil
 ---@type any
 TopLevelParentScaleFrameMixin = nil
 ---@type any
-TopText = nil
+TopScrollBar = nil
+---@type any
+TopScrollBarScrollDownButton = nil
+---@type any
+TopScrollBarScrollUpButton = nil
+---@type any
+TopScrollBarThumbTexture = nil
 ---@type any
 TorghastGemsAnimationMixin = nil
 ---@type any
@@ -82235,6 +83035,8 @@ UseInventoryItem = nil
 UseItemByName = nil
 ---@type any
 UseQuestLogSpecialItem = nil
+---@type any
+UseSharedActionBarsMixin = nil
 ---@type any
 UseToy = nil
 ---@type any
@@ -85004,10 +85806,6 @@ VehiclePrevSeat = nil
 ---@type any
 VehicleSeatIndicator = nil
 ---@type any
-VehicleSeatIndicatorButton1 = nil
----@type any
-VehicleSeatIndicatorButton2 = nil
----@type any
 VehicleSeatIndicatorButtonMixin = nil
 ---@type any
 VehicleSeatIndicatorMixin = nil
@@ -85909,6 +86707,10 @@ WarlockPowerBar = nil
 WarlockPowerFrame = nil
 ---@type any
 WarlockShardMixin = nil
+---@type any
+WarmodeButtonMixin = nil
+---@type any
+WarmodeIncentiveMixin = nil
 ---@type any
 WaypointLocationDataProviderMixin = nil
 ---@type any

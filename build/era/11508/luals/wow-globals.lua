@@ -8150,14 +8150,6 @@ BuffButton1Duration = nil
 ---@type any
 BuffButton1Icon = nil
 ---@type any
-BuffButton2 = nil
----@type any
-BuffButton2Count = nil
----@type any
-BuffButton2Duration = nil
----@type any
-BuffButton2Icon = nil
----@type any
 BuffButton_OnClick = nil
 ---@type any
 BuffButton_OnLoad = nil
@@ -9009,8 +9001,6 @@ CHATCONFIG_CHANNELS_MAXWIDTH = nil
 CHATCONFIG_FILTER_HEIGHT = nil
 ---@type any
 CHATCONFIG_HEADER = nil
----@type any
-CHATCONFIG_SELECTED_FILTER = nil
 ---@type any
 CHATLOGDISABLED = nil
 ---@type any
