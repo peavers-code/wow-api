@@ -427,6 +427,44 @@ C_WeeklyRewards = nil
 ---@type any
 C_PlayerInfo = nil
 ---@type any
+C_Housing = nil
+---@type any
+C_HousingCatalog = nil
+---@type any
+C_HousingDecor = nil
+---@type any
+C_HousingLayout = nil
+---@type any
+C_HousingNeighborhood = nil
+---@type any
+ScrollUtil = nil
+---@type any
+CreateScrollBoxListLinearView = nil
+---@type any
+CreateDataProvider = nil
+---@type any
+ScrollBoxConstants = nil
+---@type any
+PanelTemplates_UpdateTabs = nil
+---@type any
+SetPortraitToTexture = nil
+---@type any
+WorldMapFrame = nil
+---@type any
+ToggleWorldMap = nil
+---@type any
+UiMapPoint = nil
+---@type any
+SmoothStatusBarMixin = nil
+---@type any
+TooltipDataProcessor = nil
+---@type any
+ItemRefTooltip = nil
+---@type any
+StaticPopupDialogs = nil
+---@type any
+StaticPopup_Show = nil
+---@type any
 C_ChatInfo = nil
 ---@type any
 C_AddOns = nil
@@ -452,10 +490,6 @@ GetServerTime = nil
 BackdropTemplateMixin = nil
 ---@type any
 CombatLogGetCurrentEventInfo = nil
----@type any
-StaticPopup_Show = nil
----@type any
-StaticPopupDialogs = nil
 ---@type any
 SlashCmdList = nil
 ---@type any

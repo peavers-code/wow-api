@@ -129,6 +129,18 @@ local curated = {
     -- Mythic+ / vault
     "C_MythicPlus", "C_ChallengeMode", "C_WeeklyRewards", "C_PlayerInfo",
 
+    -- Housing (Midnight 12.0+)
+    "C_Housing", "C_HousingCatalog", "C_HousingDecor", "C_HousingLayout",
+    "C_HousingNeighborhood",
+
+    -- Modern list views / panel chrome (ScrollBox, tabs, portrait frames)
+    "ScrollUtil", "CreateScrollBoxListLinearView", "CreateDataProvider",
+    "ScrollBoxConstants", "PanelTemplates_SetNumTabs", "PanelTemplates_SetTab",
+    "PanelTemplates_TabResize", "PanelTemplates_UpdateTabs",
+    "PlaySound", "SOUNDKIT", "SetPortraitToTexture",
+    "WorldMapFrame", "ToggleWorldMap", "UiMapPoint", "Mixin", "SmoothStatusBarMixin",
+    "TooltipDataProcessor", "ItemRefTooltip", "StaticPopupDialogs", "StaticPopup_Show",
+
     -- Comm / addon
     "C_ChatInfo", "C_AddOns", "C_CVar", "GetAddOnMetadata", "RegisterAddonMessagePrefix",
     "SendAddonMessage", "Ambiguate", "ChatFrame_AddMessageEventFilter",
