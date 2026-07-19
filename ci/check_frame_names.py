@@ -21,9 +21,19 @@ Bindings.xml, XML template `parentKey`/inherits references, or another addon's d
 integration point. Everything else should be anonymous and held in a local.
 
 Approved prefixes default to the addon's own directory name. Addons using a short alias
-(PDS_, PSB...) declare it in an optional .wowlint.json beside the TOC:
+(PDS_, PSB...) declare it in an optional .wowlint.json beside the TOC, alongside any frame
+whose global name is genuinely required — each with the reason, so NS002 stays a live signal
+instead of a wall of advisories everyone learns to skip:
 
-    { "framePrefixes": ["PDS_"] }
+    {
+      "framePrefixes": ["PDS_"],
+      "namedFrames": {
+        "PeaversConfigFrame": "registered in UISpecialFrames, which resolves _G[name] on ESC"
+      }
+    }
+
+A malformed .wowlint.json is a hard error, not a warning: silently falling back to defaults
+would quietly drop this addon's coverage while still reporting success.
 """
 import json
 import os
@@ -44,17 +54,26 @@ CALL = re.compile(
 SKIP_DIRS = {"Libs", "libs", "Templates", ".release", "tools", ".git", "build", "vendor"}
 
 
-def approved_prefixes(addon_dir):
+class ConfigError(Exception):
+    """.wowlint.json exists but could not be used."""
+
+
+def load_config(addon_dir):
+    """Return (approved_prefixes, {frame_name: reason}). Raises ConfigError if unreadable."""
     prefixes = [os.path.basename(os.path.abspath(addon_dir))]
+    named = {}
     cfg = os.path.join(addon_dir, ".wowlint.json")
     if os.path.isfile(cfg):
         try:
             with open(cfg, encoding="utf-8") as fh:
-                extra = json.load(fh).get("framePrefixes") or []
-            prefixes.extend(str(p) for p in extra)
+                data = json.load(fh)
         except (OSError, ValueError) as exc:
-            print("warning: could not read %s: %s" % (cfg, exc), file=sys.stderr)
-    return prefixes
+            # Hard error: falling back to defaults here would silently shrink this addon's
+            # coverage while the run still reported success.
+            raise ConfigError("%s: %s" % (cfg, exc))
+        prefixes.extend(str(p) for p in (data.get("framePrefixes") or []))
+        named = {str(k): str(v) for k, v in (data.get("namedFrames") or {}).items()}
+    return prefixes, named
 
 
 def lua_files(addon_dir):
@@ -65,7 +84,7 @@ def lua_files(addon_dir):
                 yield os.path.join(root, fn)
 
 
-def diagnose(addon_dir, prefixes):
+def diagnose(addon_dir, prefixes, named):
     out = []
     for path in lua_files(addon_dir):
         rel = os.path.relpath(path, addon_dir)
@@ -84,6 +103,8 @@ def diagnose(addon_dir, prefixes):
                                 "frame name %r is not addon-prefixed, so it collides with any "
                                 "other addon using the same name; prefix it (%s...) or pass nil "
                                 "for an anonymous frame" % (name, prefixes[0])))
+                elif name in named:
+                    continue  # justified in .wowlint.json — the name is genuinely required
                 elif "Template" in text[m.end():]:
                     out.append((rel, n, col, "INFO", "NS002",
                                 "named frame %r uses a template, so WoW also creates a global "
@@ -94,7 +115,11 @@ def diagnose(addon_dir, prefixes):
 
 def main():
     addon_dir = sys.argv[1] if len(sys.argv) > 1 else "."
-    prefixes = approved_prefixes(addon_dir)
+    try:
+        prefixes, named = load_config(addon_dir)
+    except ConfigError as exc:
+        print("error: %s" % exc, file=sys.stderr)
+        return 2
     diagnostics = [
         {
             "message": msg,
@@ -103,7 +128,7 @@ def main():
             "severity": sev,
             "code": {"value": code},
         }
-        for path, line, col, sev, code, msg in diagnose(addon_dir, prefixes)
+        for path, line, col, sev, code, msg in diagnose(addon_dir, prefixes, named)
     ]
     json.dump({"source": {"name": "frame-names"}, "diagnostics": diagnostics}, sys.stdout)
     sys.stdout.write("\n")
