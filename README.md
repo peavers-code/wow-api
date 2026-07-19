@@ -1,12 +1,33 @@
 # wow-api — shared WoW API validation for Peavers addons
 
 One place that holds the **WoW client API definitions** and the **tooling** that validates
-every Peavers addon's Lua against them. Two layers of confidence without launching the game:
+every Peavers addon's Lua against them. Three layers of confidence without launching the game:
 
 | Layer | Catches | Tool | Source of truth |
 |---|---|---|---|
 | **Existence** | syntax errors, undefined globals, `C_*`/`Enum` field typos | luacheck | `build/<BUILD>/wow-globals.lua` (from `/papidump`) + curated fallback |
 | **Signatures** | wrong arg/return types, undefined fields, nil-safety | lua-language-server | `vendor/ketho` (community) + `build/<BUILD>/luals` (build-exact) |
+| **Namespace** | globally-named frames that leak into `_G` | `ci/check_frame_names.py` | the addon's own name + optional `.wowlint.json` |
+
+### Being a good `_G` citizen
+
+Addons share one global namespace, and a colliding name breaks whichever addon loads second.
+Two rules, each enforced by a different layer, because neither catches the other's vector:
+
+- **Assignments** — `luacheckrc.base.lua` sets `allow_defined_top = false`, so every global an
+  addon creates must be declared in its `.luacheckrc`. That list is the addon's documented `_G`
+  footprint; keep it short. Prefer the `local addonName, NS = ...` private table.
+- **Frame names** — `CreateFrame("Frame", "Name", ...)` writes `Name` into `_G` at *runtime*,
+  where no static analysis can see it, which is why it gets its own tier. Naming a *templated*
+  frame is worse: WoW also creates a global per named child, so one call can mint 30 globals.
+  Pass `nil` and hold the frame in a local unless something outside Lua resolves it by string
+  (Bindings.xml, an XML `inherits`/`parentKey`, or a documented integration point).
+
+Addons using a short alias declare it once beside the TOC:
+
+```json
+{ "framePrefixes": ["PDS_"] }
+```
 
 The API surface is **hybrid**: Ketho's community annotations give rich signatures for the
 broad API; our in-game `/papidump` overlays build-exact existence and any private/undocumented
@@ -30,6 +51,7 @@ wow-api/
     gen_luals_defs.py     /papidump  -> build/<BUILD>/luals/*
     lint.sh               run luacheck (existence) for an addon
     lsp_check.sh          run lua-language-server (signatures) for an addon
+    check_frame_names.py  (in ci/) run the namespace tier for an addon
   peavers-commons.lua   LuaLS def for the PeaversCommons framework (cross-addon)
 ```
 

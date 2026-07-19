@@ -50,8 +50,9 @@ def gh(*args):
 
 
 def main():
-    findings = load(sys.argv[1] if len(sys.argv) > 1 else None) \
-        + load(sys.argv[2] if len(sys.argv) > 2 else None)
+    # One rdjson file per validation tier (luacheck, lua-language-server, frame-names, ...).
+    # Accepts any number so adding a tier needs no change here.
+    findings = [f for path in sys.argv[1:] for f in load(path)]
 
     # Dedup key: a label. Create it if missing (idempotent).
     gh("label", "create", LABEL, "--repo", REPO, "--color", "B60205",
