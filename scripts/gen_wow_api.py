@@ -44,6 +44,18 @@ DENY = {
 # The dump addon's own globals — never emit these into the shared std.
 SELF_PREFIXES = ("PeaversAPIDump", "SLASH_PAPIDUMP")
 
+# Globals belonging to OTHER addons that were loaded when the dump was taken. A dump only
+# sees _G, so it cannot tell Blizzard's API from an addon's leaked globals — anything left
+# here gets baked into the shared std and silently whitelisted for every addon we lint,
+# which both hides our own pollution and lets typo'd cross-addon references pass.
+#
+# Take dumps with ONLY the dump addon enabled. This list is the backstop for when that
+# slips: add the offending addon's prefixes rather than re-dumping.
+FOREIGN_PREFIXES = (
+    "MAXFPSBK", "OPTION_MAXFPSBK",   # third-party FPS addon, present in the 12.0.7 dump
+    "Peavers", "BetterTogether",     # our own addons: never part of the WoW API
+)
+
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Base WoW install dirs across platforms. Each flavor lives in its own sub-root
@@ -140,7 +152,7 @@ def main():
     plain = set()
     namespaces = {}  # head -> set of fields
     for ident in ids:
-        if ident.startswith(SELF_PREFIXES):
+        if ident.startswith(SELF_PREFIXES) or ident.startswith(FOREIGN_PREFIXES):
             continue
         if "." not in ident:
             if ident not in DENY:

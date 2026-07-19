@@ -218,11 +218,13 @@ end
 return {
   std     = "lua51+wow",
   wow     = wow,
-  -- Globals an addon defines at the top level of any of its files are auto-allowed, so
-  -- each addon's public table / SLASH_* commands need no per-addon declaration. This only
-  -- loosens *assignment*-side checks; *access* to undefined WoW API (113) stays strict —
-  -- which is the whole point. Keeps per-addon .luacheckrc tiny across all 16 addons.
-  allow_defined_top = true,
+  -- Every global an addon creates must be declared in its own .luacheckrc. This used to be
+  -- `true`, which auto-allowed any global defined at the top level of any file — convenient,
+  -- but it made the linter blind to exactly the namespace pollution we care about, so leaked
+  -- globals like ToggleStatsDisplay/MarkTank passed clean for years. Declaring them is the
+  -- point: an undeclared global is now a CI failure, and the declaration list doubles as the
+  -- addon's documented _G footprint. Keep those lists as short as you can.
+  allow_defined_top = false,
   -- Writable globals every addon shares. The cross-addon changelog registry is appended
   -- to by each addon's Changelog.lua; SlashCmdList gets per-addon command fields assigned;
   -- StaticPopupDialogs gets per-addon dialog tables registered into it (the /papidump

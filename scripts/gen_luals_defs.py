@@ -23,7 +23,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import flavor  # noqa: E402
 from gen_wow_api import (  # noqa: E402
-    find_sv, extract, build_tag_of, resolve_flavor, SELF_PREFIXES, WOW_ROOTS, REPO_ROOT,
+    find_sv, extract, build_tag_of, resolve_flavor, SELF_PREFIXES, FOREIGN_PREFIXES,
+    WOW_ROOTS, REPO_ROOT,
 )
 
 
@@ -85,7 +86,7 @@ def main():
     for ident in globals_list:
         if "." in ident:
             continue  # top-level only
-        if ident.startswith(SELF_PREFIXES):
+        if ident.startswith(SELF_PREFIXES) or ident.startswith(FOREIGN_PREFIXES):
             continue
         if ident in defined or ident in seen:
             continue

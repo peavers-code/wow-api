@@ -50,9 +50,18 @@ rm -rf "$META"
 python3 "$CI_DIR/luals_to_rdjson.py" "$CHECK" "$ADDON_DIR" > "$OUT/luals.rdjson"
 echo "::endgroup::" 2>/dev/null || true
 
-lc=$(python3 -c "import json;print(len(json.load(open('$OUT/luacheck.rdjson'))['diagnostics']))")
-ls_=$(python3 -c "import json;print(len(json.load(open('$OUT/luals.rdjson'))['diagnostics']))")
-echo "luacheck: $lc finding(s) | lua-language-server: $ls_ finding(s)"
+echo "::group::frame names (_G pollution)" 2>/dev/null || echo "== frame names (_G pollution) =="
+# Third tier: globally-named frames. luacheck cannot see these — CreateFrame puts the name
+# into _G at runtime — so without this pass, the vector that actually floods the global
+# namespace is completely unchecked. NS001 is an error, NS002 informational.
+python3 "$CI_DIR/check_frame_names.py" "$ADDON_DIR" > "$OUT/framenames.rdjson"
+echo "::endgroup::" 2>/dev/null || true
+
+count() { python3 -c "import json;print(len(json.load(open('$1'))['diagnostics']))"; }
+lc=$(count "$OUT/luacheck.rdjson")
+ls_=$(count "$OUT/luals.rdjson")
+fn=$(count "$OUT/framenames.rdjson")
+echo "luacheck: $lc finding(s) | lua-language-server: $ls_ finding(s) | frame-names: $fn finding(s)"
 
 # REPORT_MODE selects how findings surface:
 #   pr    -> reviewdog inline review comments (pull_request events)
@@ -69,11 +78,14 @@ case "$MODE" in
       -fail-level="$FAIL_LEVEL" < "$OUT/luacheck.rdjson" || rc=$?
     reviewdog -f=rdjson -name=lua-language-server -reporter=github-pr-review -filter-mode=added \
       -fail-level="$FAIL_LEVEL" < "$OUT/luals.rdjson" || rc=$?
+    reviewdog -f=rdjson -name=frame-names -reporter=github-pr-review -filter-mode=added \
+      -fail-level="$FAIL_LEVEL" < "$OUT/framenames.rdjson" || rc=$?
     exit $rc
     ;;
   issue)
     # Upsert the per-repo tracking issue (auto-closes when clean). Never fails the build.
-    python3 "$CI_DIR/report_issue.py" "$OUT/luacheck.rdjson" "$OUT/luals.rdjson"
+    python3 "$CI_DIR/report_issue.py" "$OUT/luacheck.rdjson" "$OUT/luals.rdjson" \
+      "$OUT/framenames.rdjson"
     exit 0
     ;;
   *)
