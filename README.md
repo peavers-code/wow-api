@@ -23,11 +23,23 @@ Two rules, each enforced by a different layer, because neither catches the other
   Pass `nil` and hold the frame in a local unless something outside Lua resolves it by string
   (Bindings.xml, an XML `inherits`/`parentKey`, or a documented integration point).
 
-Addons using a short alias declare it once beside the TOC:
+A name is genuinely required when something outside Lua resolves it by string. In practice
+that is almost always `UISpecialFrames` (ESC-to-close looks up `_G[name]`), a Blizzard template
+that addresses its own children by global name (`UIDropDownMenuTemplate`, `InputBoxTemplate`,
+`UIPanelScrollFrameTemplate`), or `Bindings.xml`. Those get declared beside the TOC, each with
+its reason, so NS002 stays a live signal instead of a wall of advisories everyone learns to skip:
 
 ```json
-{ "framePrefixes": ["PDS_"] }
+{
+  "framePrefixes": ["PDS_"],
+  "namedFrames": {
+    "PeaversConfigFrame": "registered in UISpecialFrames, which resolves _G[name] on ESC"
+  }
+}
 ```
+
+A malformed `.wowlint.json` fails the run rather than falling back to defaults — a silent
+fallback would shrink that addon's coverage while still reporting success.
 
 The API surface is **hybrid**: Ketho's community annotations give rich signatures for the
 broad API; our in-game `/papidump` overlays build-exact existence and any private/undocumented

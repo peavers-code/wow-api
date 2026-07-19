@@ -54,7 +54,12 @@ echo "::group::frame names (_G pollution)" 2>/dev/null || echo "== frame names (
 # Third tier: globally-named frames. luacheck cannot see these — CreateFrame puts the name
 # into _G at runtime — so without this pass, the vector that actually floods the global
 # namespace is completely unchecked. NS001 is an error, NS002 informational.
-python3 "$CI_DIR/check_frame_names.py" "$ADDON_DIR" > "$OUT/framenames.rdjson"
+# A bad .wowlint.json exits non-zero here. Fail loudly rather than continue with an empty
+# report, which would look identical to "this addon is clean".
+if ! python3 "$CI_DIR/check_frame_names.py" "$ADDON_DIR" > "$OUT/framenames.rdjson"; then
+  echo "frame-name check failed (see error above); not reporting partial results" >&2
+  exit 1
+fi
 echo "::endgroup::" 2>/dev/null || true
 
 count() { python3 -c "import json;print(len(json.load(open('$1'))['diagnostics']))"; }
