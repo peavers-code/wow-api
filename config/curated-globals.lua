@@ -259,6 +259,12 @@ SetCVar = nil
 ---@type any
 GetCVarBool = nil
 ---@type any
+SendChatMessage = nil
+---@type any
+GetWorldElapsedTime = nil
+---@type any
+GetWorldElapsedTimers = nil
+---@type any
 GetCritChance = nil
 ---@type any
 GetSpellCritChance = nil
