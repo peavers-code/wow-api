@@ -90,6 +90,16 @@ local curated = {
     "GetSpecializationInfoForClassID", "GetNumClasses",
     "GetLocale", "GetCVar", "SetCVar", "GetCVarBool",
 
+    -- Chat out. `SendChatMessage` was missing from this list, so every addon
+    -- that talks to a channel - PeaversCommons' own Promoter included - carried
+    -- a standing warning for it.
+    "SendChatMessage",
+
+    -- The scenario/keystone clocks. `GetWorldElapsedTime` is how an addon reads
+    -- the Mythic+ timer, and `GetWorldElapsedTimers` is how it finds which timer
+    -- that is rather than assuming index 1.
+    "GetWorldElapsedTime", "GetWorldElapsedTimers",
+
     -- Stats
     "GetCritChance", "GetSpellCritChance", "GetHaste", "GetMastery", "GetMasteryEffect",
     "GetVersatilityBonus", "GetCombatRating", "GetCombatRatingBonus", "GetDodgeChance",
