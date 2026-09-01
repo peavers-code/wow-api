@@ -24,7 +24,11 @@
   ],
   "workspace.checkThirdParty": false,
 
-  "diagnostics.globals": ["CombatLogGetCurrentEventInfo"],
+  "//6": "ADDON_DIR and HARNESS_LIB are set by the Ultra Performance runner (lua_setglobal",
+  "//7": "in peavers-warcraft-workflows/perf-harness/runner.mjs) before it loads a perf case,",
+  "//8": "so they are real at runtime and only invisible to static analysis. Harmless in an",
+  "//9": "addon with no perf/ dir, and it saves the next one rediscovering the warning.",
+  "diagnostics.globals": ["CombatLogGetCurrentEventInfo", "ADDON_DIR", "HARNESS_LIB"],
   "diagnostics.disable": [
     "missing-parameter",
     "redundant-parameter",
