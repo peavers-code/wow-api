@@ -57,7 +57,7 @@ local curated = {
     "CreateFrame", "UIParent", "WorldFrame", "GameTooltip", "GameTooltip_Hide",
     "UISpecialFrames", "UIFrameFadeIn", "UIFrameFadeOut", "CreateColor",
     "CreateColorFromHexString", "Mixin", "CreateFromMixins", "hooksecurefunc",
-    "GetCursorPosition", "GetPhysicalScreenSize", "InCombatLockdown",
+    "GetCursorPosition", "GetPhysicalScreenSize", "InCombatLockdown", "Screenshot",
     "C_Timer", "PlaySound", "PlaySoundFile", "SOUNDKIT",
     "PanelTemplates_SelectTab", "PanelTemplates_DeselectTab", "PanelTemplates_TabResize",
     "PanelTemplates_SetNumTabs", "PanelTemplates_SetTab", "PanelTemplates_GetSelectedTab",
