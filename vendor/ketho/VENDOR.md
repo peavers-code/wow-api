@@ -1,8 +1,8 @@
 # Vendored: Ketho/vscode-wow-api
 
 Source: https://github.com/Ketho/vscode-wow-api
-Commit: 4ae0d78bf93c5eda3d6cd18a876aa8eecbdb8732
-Date:   2026-06-02
+Commit: d0b5b51fac4c52c493371b9b18e66ce604ea4326
+Date:   2026-06-24
 Path:   Annotations/Core  (rich LuaLS signatures for the WoW API)
 
 Refresh on each WoW patch (see ../../README.md). Re-clone and re-copy Annotations/Core.
