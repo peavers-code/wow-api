@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
-# Validate one addon with both tiers and emit reviewdog rdjson. Used by the reusable CI
-# workflow and runnable locally for a dry run.
+# Validate one addon with all three tiers and emit reviewdog rdjson. Runnable locally, and
+# the analysis core AddonSentry runs per job.
+#
+# This script produces rdjson and nothing else; posting is the caller's job. AddonSentry
+# maps these files into GitHub Check Runs and inline PR comments (worker/rdjson_to_checks.py,
+# worker/pr_comments.py), which superseded the reviewdog and tracking-issue paths that used
+# to live here.
 #
 #   Env:
 #     WOW_API_DIR        path to the wow-api package        (default: ../wow-api)
 #     WOW_FLAVOR         flavor whose defs to use           (default: mainline; read by .luacheckrc)
 #     WOW_BUILD          interface build under that flavor  (unset = curated fallback)
-#     REVIEWDOG_REPORTER reviewdog -reporter value          (unset = local dry run, no post)
 #     CHECK_LEVEL        LuaLS level: Error|Warning|Hint    (default: Warning)
-#     FAIL_LEVEL         reviewdog -fail-level: error|any   (default: error)
 #   WOW_FLAVOR/WOW_BUILD are consumed by the addon's .luacheckrc (via luacheckrc.base.lua);
 #   the caller (AddonSentry) exports them per run to select build/<flavor>/<build>/.
 #
@@ -19,7 +22,6 @@ set -uo pipefail
 ADDON_DIR="$(pwd)"
 WOW_API_DIR="${WOW_API_DIR:-../wow-api}"
 CHECK_LEVEL="${CHECK_LEVEL:-Warning}"
-FAIL_LEVEL="${FAIL_LEVEL:-error}"
 CI_DIR="$WOW_API_DIR/ci"
 OUT="$ADDON_DIR/.validate"
 mkdir -p "$OUT"
@@ -68,33 +70,4 @@ ls_=$(count "$OUT/luals.rdjson")
 fn=$(count "$OUT/framenames.rdjson")
 echo "luacheck: $lc finding(s) | lua-language-server: $ls_ finding(s) | frame-names: $fn finding(s)"
 
-# REPORT_MODE selects how findings surface:
-#   pr    -> reviewdog inline review comments (pull_request events)
-#   issue -> upsert one tracking issue per repo (push/master + workflow_dispatch)
-#   dry   -> local run: just write rdjson + summary, never post or fail (default)
-MODE="${REPORT_MODE:-dry}"
-
-case "$MODE" in
-  pr)
-    command -v reviewdog >/dev/null 2>&1 || { echo "reviewdog not on PATH"; exit 0; }
-    # Inline PR comments on the diff. Errors fail (FAIL_LEVEL); warnings annotate only.
-    rc=0
-    reviewdog -f=rdjson -name=luacheck -reporter=github-pr-review -filter-mode=added \
-      -fail-level="$FAIL_LEVEL" < "$OUT/luacheck.rdjson" || rc=$?
-    reviewdog -f=rdjson -name=lua-language-server -reporter=github-pr-review -filter-mode=added \
-      -fail-level="$FAIL_LEVEL" < "$OUT/luals.rdjson" || rc=$?
-    reviewdog -f=rdjson -name=frame-names -reporter=github-pr-review -filter-mode=added \
-      -fail-level="$FAIL_LEVEL" < "$OUT/framenames.rdjson" || rc=$?
-    exit $rc
-    ;;
-  issue)
-    # Upsert the per-repo tracking issue (auto-closes when clean). Never fails the build.
-    python3 "$CI_DIR/report_issue.py" "$OUT/luacheck.rdjson" "$OUT/luals.rdjson" \
-      "$OUT/framenames.rdjson"
-    exit 0
-    ;;
-  *)
-    echo "(dry run: set REPORT_MODE=pr|issue to post; rdjson written to $OUT/)"
-    exit 0
-    ;;
-esac
+echo "(rdjson written to $OUT/)"
