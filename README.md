@@ -87,18 +87,20 @@ This is the "update the dump when the game changes" workflow:
 
 1. In-game: enable **Peavers API Dump** at character-select (install `apidump/` as the addon
    `PeaversAPIDump`), run `/papidump`, then `/reload` (WoW flushes SavedVariables on reload).
-2. Regenerate:
+2. From this checkout, on the same machine:
    ```bash
-   python3 scripts/gen_wow_api.py      # -> build/<newBUILD>/wow-globals.lua
-   python3 scripts/gen_luals_defs.py   # -> build/<newBUILD>/luals/*
+   python3 scripts/publish_dump.py
    ```
-   The scripts auto-locate the newest `PeaversAPIDump.lua` SavedVariables across common WoW
-   install paths (macOS/Windows); pass `--sv PATH` or `--wow-root DIR` to override.
-3. Refresh the vendored Ketho annotations to match the patch (re-clone, copy `Annotations/Core`,
-   update `vendor/ketho/VENDOR.md`).
-4. Bump `BUILD` in `config/luacheckrc.base.lua` and the `build/<BUILD>` path in
-   `config/luarc.base.json` (and each addon's `.luarc.json`). Commit the new `build/<BUILD>/`.
-   Old builds stay for addons still on a prior Interface version.
+   It branches off `origin/master`, runs `gen_wow_api.py` and `gen_luals_defs.py` (which find the
+   newest `PeaversAPIDump.lua` across common WoW install paths; pass `--sv PATH` or
+   `--wow-root DIR` to override), checks the three generated files agree on the client build,
+   points `config/luarc.base.json` at a new newest mainline build, then commits, pushes and opens
+   the PR with `gh`. `--dry-run` generates and shows the diff without touching git. Old builds
+   stay for addons still on a prior Interface version.
+3. After the PR merges, AddonSentry needs a redeploy, a pin move and a rescan before it scans
+   against the new build. The weekly addon health check does that.
+4. Now and then, refresh the vendored Ketho annotations to match the patch (re-clone, copy
+   `Annotations/Core`, update `vendor/ketho/VENDOR.md`).
 
 ## Limitations
 
