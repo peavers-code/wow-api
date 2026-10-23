@@ -107,6 +107,8 @@ GetPhysicalScreenSize = nil
 ---@type any
 InCombatLockdown = nil
 ---@type any
+Screenshot = nil
+---@type any
 C_Timer = nil
 ---@type any
 PlaySound = nil
